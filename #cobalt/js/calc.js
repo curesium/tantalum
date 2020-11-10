@@ -10,4 +10,4 @@ function calc() {
 
 // For the submit button
 let submit = document.querySelector('[type="submit"]');
-submit.addEventListener('click', displaySlots)
+submit.addEventListener('click', calc)

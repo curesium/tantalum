@@ -1,10 +1,22 @@
 // Function to calculate the numbers
 function calc() {
-  let slots = document.querySelector('[name="slots"]');
+
+  // The total amount of positions available
+  let positions = document.querySelector('[name="positions"]');
+
+  // All of the different kind of characters possible
+  let lowercase = document.querySelector('[name="lowercase"]');
+  let capital = document.querySelector('[name="capital"]');
+  let number = document.querySelector('[name="number"]');
   let characters = document.querySelector('[name="characters"]');
 
-  let count = Math.pow(parseInt(slots.value), parseInt(characters.value));
+  // Total amount of characters
+  let total = parseInt(lowercase.value) + parseInt(capital.value) + parseInt(number.value) + parseInt(characters.value)
 
+  // The formula
+  let count = Math.pow(parseInt(slots.value), parseInt(total.value));
+
+  // Display the output
   document.querySelector('#outputText').innerHTML = count
 }
 

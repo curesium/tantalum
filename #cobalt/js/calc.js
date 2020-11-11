@@ -7,7 +7,7 @@ function calc() {
   // All of the different kind of characters possible
   let lowercaseInput = document.querySelector('[name="lowercase"]');
   let capitalInput = document.querySelector('[name="capital"]');
-  let numbersInput = document.querySelector('[name="number"]');
+  let numbersInput = document.querySelector('[name="numbers"]');
   let charactersInput = document.querySelector('[name="characters"]');
 
   // Parsing all of the variables to intergers

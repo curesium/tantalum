@@ -28,3 +28,39 @@ header {
 h1.header {
   font-size: 64px;
 }
+
+/* Tool */
+#tool {
+  width: 48vw;
+  margin-left: 25vw;
+
+  text-align: center;
+}
+
+  /* Input */
+label {
+  font-size: 32px;
+}
+
+input {
+  display: block;
+  margin: auto;
+
+  margin-bottom: 10px;
+
+  font-size: 32px;
+}
+
+  /* Answer */
+#toolOutput {
+  background-color: #363636;
+
+  padding: 10px;
+
+  border: hidden;
+  border-radius: 10px;
+}
+
+#outputText {
+  font-size: 32px;
+}

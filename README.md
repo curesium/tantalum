@@ -16,8 +16,8 @@ Go to the website in the 'About' section or click [here](https://curesiumtool-co
 ## Credits
 ### Math
 The math is done by the following people:
-* [Twanman1412](https://github.com/twanman1412	"Twan's account")
+* [Twanman1412](https://github.com/twanman1412)
 
 ## Other
 The other things are done by:
-* [Thijs Boom](https://github.com/twboom "Thijs' account")
+* [Thijs Boom](https://github.com/twboom)

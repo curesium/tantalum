@@ -22,9 +22,13 @@ function calc() {
   let total = lowercase + capital + numbers + characters;
 
   // The formula
+  let combinations = positions * (positions - 1) * (positions - 2) * (positions - 3);
+
+  let formula = combinations * lowercase * capital * numbers * characters * total ** 4;
+
 
   // Display the output
-  document.querySelector('#outputText').innerHTML = total
+  document.querySelector('#outputText').innerHTML = formula
 }
 
 

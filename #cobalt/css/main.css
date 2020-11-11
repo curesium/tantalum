@@ -1,2 +1,57 @@
+/* Fonts */
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+/* For whole site */
+html {
+  overflow-x: hidden;
+
+  font-family: 'Quicksand';
+  color: #FFFFFF;
+
+  background-color: #4D4C4C;
+
+  scroll-behavior: smooth;
+
+  transition: 6s;
+}
+
+
+/* The header */
+
+header {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+h1.header {
+  font-size: 150px;
+
+  letter-spacing: 30px;
+
+  margin: 10px;
+
+  transition: 6s;
+}
+
+
+h2.header {
+  font-size: 50px;
+
+  margin: 10px;
+}
+
+
+/* The tool */
+
+.tool {
+
+}

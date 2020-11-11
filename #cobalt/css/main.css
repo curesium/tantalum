@@ -64,3 +64,24 @@ input {
 #outputText {
   font-size: 32px;
 }
+
+  /* Submit button */
+.submitButton {
+  font-family: 'Quicksand';
+  color: #FFFFFF;
+
+  background-color: #363636;
+
+  padding: 10px;
+  margin-bottom: 25px;
+
+  border: hidden;
+  border-radius: 5px;
+
+  transition: 0.5s;
+}
+
+.submitButton:hover {
+  padding: 20px;
+  margin-bottom: 5px;
+}

@@ -29,6 +29,12 @@ h1.header {
   font-size: 64px;
 }
 
+a.header {
+  color: #FFFFFF;
+  
+  text-decoration: none;
+}
+
 /* Tool */
 #tool {
   width: 48vw;

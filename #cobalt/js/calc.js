@@ -2,23 +2,29 @@
 function calc() {
 
   // The total amount of positions available
-  let positions = document.querySelector('[name="positions"]');
-  let slots = parseInt(positions.value);
+  let positionsInput = document.querySelector('[name="positions"]');
 
   // All of the different kind of characters possible
-  let lowercase = document.querySelector('[name="lowercase"]');
-  let capital = document.querySelector('[name="capital"]');
-  let number = document.querySelector('[name="number"]');
-  let characters = document.querySelector('[name="characters"]');
+  let lowercaseInput = document.querySelector('[name="lowercase"]');
+  let capitalInput = document.querySelector('[name="capital"]');
+  let numbersInput = document.querySelector('[name="number"]');
+  let charactersInput = document.querySelector('[name="characters"]');
+
+  // Parsing all of the variables to intergers
+  let positions = parseInt(positionsInput.value);
+
+  let lowercase = parseInt(lowercaseInput.value);
+  let capital = parseInt(capitalInput.value);
+  let numbers = parseInt(numbersInput.value);
+  let characters = parseInt(charactersInput.value);
 
   // Total amount of characters
-  let total = parseInt(lowercase.value) + parseInt(capital.value) + parseInt(number.value) + parseInt(characters.value)
+  let total = lowercase + capital + numbers + characters;
 
   // The formula
-  let count = Math.pow(slots, total);
 
   // Display the output
-  document.querySelector('#outputText').innerHTML = count
+  document.querySelector('#outputText').innerHTML = total
 }
 
 

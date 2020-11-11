@@ -9,6 +9,7 @@ html {
   overflow-x: hidden;
 
   font-family: 'Quicksand';
+  font-size: 24px;
   color: #FFFFFF;
 
   background-color: #4D4C4C;
@@ -52,6 +53,15 @@ h2.header {
 
 /* The tool */
 
-.tool {
+#tool {
+  width: 48vw;
+  height: 100vh;
+  margin-left: 25vw;
 
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: auto;
 }

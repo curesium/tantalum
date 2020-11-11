@@ -79,6 +79,8 @@ input {
   border-radius: 5px;
 
   transition: 0.5s;
+
+  -webkit-appearance: none;
 }
 
 .submitButton:hover {

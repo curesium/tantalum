@@ -27,12 +27,15 @@ header {
 
 h1.header {
   font-size: 64px;
+  margin: 0px;
 }
 
-a.header {
+a.source {
   color: #FFFFFF;
-  
+
   text-decoration: none;
+
+  margin: 0px;
 }
 
 /* Tool */

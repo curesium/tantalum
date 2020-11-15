@@ -257,9 +257,31 @@ function calc() {
     }
 }
   // The formula
+  if (capitalRequired === 0) {
+    let combinations = normalPositions * numbersPositions * charactersPositions;
+    if (normalRequired === 0) {
+      let combinations = numbersPositions * charactersPositions;
+      if (numbersRequired === 0) {
+        let combinations = charactersPositions;
+        if (charactersRequired === 0) {
+          let conbinations = 0;
+        }
+      }
+    }
+  }
+  if (normalRequired === 0) {
+    let combinations = capitalPositions * numbersPositions * charactersPositions;
+    if (numbersRequired === 0) {
+      let combinations = charactersPositions;
+      if (charactersRequired === 0) {
+        let conbinations = 0;
+      }
+    }
+  }
+
   let combinations = capitalPositions * normalPositions * numbersPositions * charactersPositions;
 
-  let formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** totalRequired);
+  let formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
 
 
   // Display the output

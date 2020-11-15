@@ -18,12 +18,20 @@ function calc() {
   let charactersRequired = document.querySelector('[name="charactersRequired"]');
 
   // Parsing all of the variables to intergers
+    // Total amount
   let length = parseInt(positionsInput.value);
 
+    // Possible options
   let lowercase = parseInt(lowercaseInput.value);
   let capital = parseInt(capitalInput.value);
   let numbers = parseInt(numbersInput.value);
   let characters = parseInt(charactersInput.value);
+
+  // Required characters
+  let lowercaseRequired = parseInt(lowercaseRequiredInput.value);
+  let capitalRequired = parseInt(capitalRequiredInput.value);
+  let numbersRequired = parseInt(numbersRequiredInput.value);
+  let charactersRequired = parseInt(numbersRequiredInput.value);
 
 
   // Total amount of characters
@@ -118,19 +126,44 @@ function calc() {
   //1222
   if (capitalRequired === 1) {
       capitalPositions = length;
-      if (normal === 2) {
-           norPos = ((length - 1) * (length - 2)) / ((normal) * (normal -1))
-           if (number === 2) {
-               numPos = ((length - 3) * (length - 4)) / ((number) * (number - 1))
-               if (character === 2) {
-                   chaPos = ((length - 5) * (length - 6)) / ((character) * (character - 1))
+      if (normalRequired === 2) {
+           normalPositions = ((length - 1) * (length - 2)) / ((normal) * (normal -1))
+           if (numbersRequired === 2) {
+               numbersPositions = ((length - 3) * (length - 4)) / ((number) * (number - 1))
+               if (charactersRequired === 2) {
+                   charactersPositions = ((length - 5) * (length - 6)) / ((character) * (character - 1))
                }
            }
       }
   }
-
+  // 2111
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
+    if (normalRequired === 1) {
+        normalPositions = length - 2;
+        if (numbersRequired === 1) {
+            numbersPositions = length - 3;
+            if (charactersRequired === 1) {
+                charactersPositions = length - 4;
+            }
+        }
+    }
+}
+  // 2211
+  if (capitalRequired === 2) {
+      capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
+      if (normalRequired === 2) {
+          normalPositions = ((length - 2) * (length - 3)) / ((normalRequired) * (normalRequired -1))
+          if (numbersRequired === 1) {
+              numbersPositions = length - 4;
+              if (charactersRequired === 1) {
+                  charactersPositions = length - 5;
+              }
+          }
+      }
+  }
   // The formula
-  let combinations = positions * (positions - 1) * (positions - 2) * (positions - 3);
+  let combinations = capitalPositions * normalPositions;
 
   let formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** totalRequired);
 

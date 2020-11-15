@@ -300,7 +300,7 @@ function calc() {
   if (capitalRequired === 1) {
     capitalPositions = length;
     if (normalRequired === 1) {
-      normalPositions = legnt - 1;
+      normalPositions = length - 1;
       if (numbersRequired === 1) {
         numbersPositions = length -2;
         if (charactersRequired === 0) {
@@ -323,22 +323,187 @@ function calc() {
     }
   }
   // 0121
-  if (capitalRequired === ) {
-    capitalPositions = ;
-    if (normalRequired === ) {
-      normalPositions = ;
-      if (numbersRequired === ) {
-        numbersPositions = ;
+  if (capitalRequired === 0) {
+    capitalPositions = 0;
+    if (normalRequired === 1) {
+      normalPositions = length;
+      if (numbersRequired === 2) {
+        numbersPositions = ((length - 1) * (length - 2)) / ((numbersRequired) * (numbersRequired - 1));
+        if (charactersRequired === 1) {
+          charactersPositions = length - 3;
+        }
+      }
+    }
+  }
+  // 0211
+  if (capitalRequired === 0) {
+    capitalPositions = 0;
+    if (normalRequired === 2) {
+      normalPositions = ((length) * (length - 1)) / ((normalRequired) * (normalRequired - 1));
+      if (numbersRequired === 1) {
+        numbersPositions = length - 2;
+        if (charactersRequired === 1) {
+          charactersPositions = length - 2;
+        }
+      }
+    }
+  }
+  // 1021
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 0) {
+      normalPositions = 0;
+      if (numbersRequired === 2) {
+        numbersPositions = ((length - 1) * (length - 2)) / ((numbersRequired) * (numbersRequired - 1));
+        if (charactersRequired === 1) {
+          charactersPositions = length - 3;
+        }
+      }
+    }
+  }
+  // 2011
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
+    if (normalRequired === 0) {
+      normalPositions = 0;
+      if (numbersRequired === 1) {
+        numbersPositions = length - 2;
+        if (charactersRequired === 1) {
+          charactersPositions = length - 3;
+        }
+      }
+    }
+  }
+  // 1012
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 0) {
+      normalPositions = 0;
+      if (numbersRequired === 1) {
+        numbersPositions = length - 1;
+        if (charactersRequired === 2) {
+          charactersPositions = ((length - 2) * (length - 3)) / ((charactersRequired) * (charactersRequired - 1));
+        }
+      }
+    }
+  }
+  // 1102
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 1) {
+      normalPositions = length - 1;
+      if (numbersRequired === 0) {
+        numbersPositions = 0;
+        if (charactersRequired === 2) {
+          charactersPositions = ((length - 2) * (length - 3)) / ((charactersRequired) * (charactersRequired - 1));
+        }
+      }
+    }
+  }
+  // 2101
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
+    if (normalRequired === 1) {
+      normalPositions = length - 2;
+      if (numbersRequired === 0) {
+        numbersPositions = 0;
+        if (charactersRequired === 1) {
+          charactersPositions = length - 3;
+        }
+      }
+    }
+  }
+  // 1201
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 2) {
+      normalPositions = ((length - 1) * (length - 2)) / ((normalRequired) * (normalRequired - 1));
+      if (numbersRequired === 0) {
+        numbersPositions = 0;
+        if (charactersRequired === 1) {
+          charactersPositions = length - 3;
+        }
+      }
+    }
+  }
+  // 2110
+  if (capitalRequired === 2) {
+    capitalPositions = ((length)  * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
+    if (normalRequired === 1) {
+      normalPositions = length - 2;
+      if (numbersRequired === 1) {
+        numbersPositions = length - 3;
+        if (charactersRequired === 0) {
+          charactersPositions = 0;
+        }
+      }
+    }
+  }
+  // 1210
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 2) {
+      normalPositions = ((length - 1) * (length - 2)) / ((normalRequired) * (normalRequired - 1));
+      if (numbersRequired === 1) {
+        numbersPositions = length - 3;
+        if (charactersRequired === 0) {
+          charactersPositions = 0;
+        }
+      }
+    }
+  }
+  // 1120
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 1) {
+      normalPositions = length - 1;
+      if (numbersRequired === 2) {
+        numbersPositions = ((;length - 2) * (length - 3)) / ((normalRequired) * (normalRequired - 1));
         if (charactersRequired === ) {
           charactersPositions = ;
         }
       }
     }
   }
-
-
-
-
+  // 0221
+  if (capitalRequired === 0) {
+    capitalPositions = 0;
+    if (normalRequired === 2) {
+      normalPositions = ((length) * (;length - 1)) / ((normalRequired) * (normalRequired - 1));
+      if (numbersRequired === 2) {
+        numbersPositions = ((length - 2) * (length - 3)) / ((numbersRequired) * (numbersRequired - 1));
+        if (charactersRequired === 1) {
+          charactersPositions = length - 4;
+        }
+      }
+    }
+  }
+  // 0212
+  if (capitalRequired === 0) {
+    capitalPositions = 0;
+    if (normalRequired === 2) {
+      normalPositions = ((length) * (length - 1)) / ((normalRequired) * (normalRequired - 1));
+      if (numbersRequired === 1) {
+        numbersPositions = length - 2;
+        if (charactersRequired === 2) {
+          charactersPositions = ((length - 3) * (length - 4)) / ((charactersRequired) * (charactersRequired - 1));
+        }
+      }
+    }
+  }
+  // 0122
+  if (capitalRequired === 0) {
+    capitalPositions = 0;
+    if (normalRequired === 1) {
+      normalPositions = length;
+      if (numbersRequired === 2) {
+        numbersPositions = ((length - 1) * (length - 2)) / ((numbersRequired) * (numbersRequired - 1));
+        if (charactersRequired === 2) {
+          charactersPositions = ((length - 3) * (length - 4)) / ((charactersRequired) * (charactersRequired));
+        }
+      }
+    }
+  }
 
 
 

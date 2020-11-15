@@ -322,6 +322,19 @@ function calc() {
       }
     }
   }
+  // 0121
+  if (capitalRequired === ) {
+    capitalPositions = ;
+    if (normalRequired === ) {
+      normalPositions = ;
+      if (numbersRequired === ) {
+        numbersPositions = ;
+        if (charactersRequired === ) {
+          charactersPositions = ;
+        }
+      }
+    }
+  }
 
 
 

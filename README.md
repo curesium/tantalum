@@ -6,7 +6,7 @@ TANTALUM is a tool to calculate the number of passwords that follow certain rule
 It's a webtool, so you don't have to install anythings.
 Go to the website in the 'About' section or click [here](https://curesiumtool-tantalum.netlify.app/tool 'TANTALUM IS HERE')
 
-### What does those fields do?
+### What does this fields do?
 * **POSITIONS:** This field is for how many positions there are in your password
 * **LOWERCASE:** This field is for how many lowercase letters you must have in your password
 * **CAPITAL:** This field is for how many capital letters you must have in your password

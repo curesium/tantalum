@@ -14,7 +14,7 @@ Go to the website in the 'About' section or click [here](https://curesiumtool-ta
 * **CHARACTER:** This field is for how many characters you must have in your password
 
 ### Errors
-In case you run into a error, it *should* display an error. You can check the errors on the error wiki page. You can find that [here](https://github.com/curesium/tantalum/wiki/errors 'Error help page').
+In case you run into a error, it *should* display an error. You can check the errors on the error wiki page. You can find that [here](https://github.com/curesium/tantalum/wiki/Errors 'Error help page').
 
 ## Credits
 ### Math

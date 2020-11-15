@@ -162,8 +162,99 @@ function calc() {
           }
       }
   }
+  // 2121
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
+    if (normalRequired === 1) {
+        normalPositions = length - 2;
+        if (numbersPositions === 2) {
+            numbersPositions = ((length - 3) * (length - 4)) / ((numbersRequired) * (numbersRequired -1))
+            if (charactersRequired === 1) {
+                charactersPositions = length - 5
+            }
+        }
+    }
+}
+  // 2112
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
+    if (normalRequired === 1) {
+        normalPositions = length - 2;
+        if (numbersPositions === 1) {
+            numbersPositions = length - 3;
+            if (charactersPositions === 2) {
+                charactersPositions = ((length - 4) * (length - 5)) / ((length) * (length -1))
+              }
+          }
+      }
+  }
+  // 1212
+  if (capitalRequired === 1) {
+    capitalPositions = length;
+    if (normalRequired === 2) {
+        normalPositions = ((length - 1) * (length - 2)) / ((normalPositions) * (normalPositions - 1))
+        if (numbersRequired === 1) {
+            numbersPositions = length - 3;
+            if (charactersRequired === 2) {
+                charactersPositions = ((length - 4) * (length - 5)) / ((charactersRequired) * (charactersRequired - 1))
+            }
+        }
+    }
+}
+  // 2122
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired -1))
+    if (normalRequired === 1) {
+        normalPositions = length - 2;
+        if (numbersRequired === 2)  {
+            numbersPositions = ((length - 3) * (length - 4)) / ((numbersRequired) * (numbersRequired - 1))
+            if (charactersPositions === 2) {
+                charactersPositions = ((length - 5) * (length - 6)) / ((charactersPositions) * (charactersPositions - 1))
+            }
+        }
+    }
+  }
+  // 2212
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
+    if (normalRequired === 2) {
+      normalPositions = ((length - 2) * (length - 3)) / ((normalRequired) * (normalRequired - 1))
+      if (numbersRequired === 1) {
+            numbersPositions = length - 4;
+            if (charactersRequired === 2) {
+                charactersPositions = ((length - 5) * (length - 6)) / ((charactersRequired) * (charactersRequired - 1))
+            }
+        }
+    }
+}
+  // 2221
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length - 1 )) / ((capitalRequired) * (capitalRequired -1))
+    if (normalRequired === 2) {
+        normalPositions = ((length - 2) * (length - 3)) / ((normalRequired) * (normalRequired - 1))
+        if (numbersRequired === 2) {
+            numbersPositions = ((length - 4) * (length - 5)) / ((numbersRequired) * (numbersRequired - 1))
+            if (charactersRequired === 1) {
+                charactersPositions = length - 6;
+            }
+        }
+    }
+  }
+  // 2222
+  if (capitalRequired === 2) {
+    capitalPositions = ((length) * (length -1)) / ((capitalRequired) * (capitalRequired - 1))
+    if (normalRequired === 2) {
+        normalPositions = ((length - 2) * (length -3)) / ((normalRequired) * (normalRequired -1))
+        if (numbersRequired === 2) {
+            numbersPositions = ((length - 4) * (length - 5)) / ((numbersRequired)  * (numbersRequired - 1))
+            if (charactersRequired === 2) {
+                charactersPositions = ((length - 6) * (length - 7)) / ((charactersRequired) * (charactersRequired - 1))
+            }
+        }
+    }
+}
   // The formula
-  let combinations = capitalPositions * normalPositions;
+  let combinations = capitalPositions * normalPositions * numbersPositions * charactersPositions;
 
   let formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** totalRequired);
 

@@ -48,506 +48,269 @@ function calc() {
 
 
 
-  // 1112
+  // Total amount
+  let length = 8;
+
+  // Possible options
+  let lowercase;
+  let capital;
+  let numbers;
+  let characters;
+
+  // Required characters
+  let capitalRequired = 1;
+  let lowercaseRequired = 1;
+  let numbersRequired = 1;
+  let charactersRequired = 1;
+
+  // Total amount of characters
+  let total = lowercase + capital + numbers + characters;
+
+  // Total amount of required characters
+  let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
+
+  // Possible combinations
+  let capitalPositions;
+  let lowercasePositions;
+  let numbersPositions;
+  let charactersPositions;
+
+  let combinations;
+
+  if (capitalRequired === 0) {
+      capitalPositions = 0;
+  }
   if (capitalRequired === 1) {
       capitalPositions = length;
-      if (normalRequired === 1) {
-          normalPositions = length - 1;
-          if (numbersRequired === 1) {
-              numbersPositions = length - 2;
-               if (charactersRequired === 2) {
-                      charactersPositions = ((length - 3) * (length - 4)) / ((charactersRequired) * (charactersRequired - 1))
+  }
+  if (capitalRequired === 2 ) {
+      capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
+  }
+  if (lowercaseRequired === 0) {
+      lowercasePositions = 0;
+  }
+  if (lowercaseRequired === 1) {
+      lowercasePositions = length - capitalRequired;
+  }
+  if (lowercaseRequired === 2) {
+      lowercasePositions = ((length - capitalRequired) * (length - capitalRequired - 1)) / ((lowercaseRequired) * (lowercaseRequired - 1));
+  }
+  if (numbersRequired === 0) {
+      numbersPositions = 0;
+  }
+  if (numbersRequired === 1) {
+      numbersPositions = length - capitalRequired - lowercaseRequired;
+  }
+  if (numbersRequired === 2) {
+      numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1)) / ((numbersRequired) * (numbersRequired - 1));
+  }
+  if (charactersRequired === 0) {
+      charactersPositions = 0;
+  }
+  if (charactersRequired === 1) {
+      charactersPositions = length - capitalRequired - lowercaseRequired - numbersRequired;
+  }
+  if (charactersRequired === 2) {
+      charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1)) / ((charactersRequired) * (charactersRequired - 1));
+  }
+
+
+
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = 0;
               }
           }
       }
   }
-  //1111
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-      if (normalRequired === 1) {
-          normalPositions = length - 1;
-          if (numbersRequired === 1) {
-              numbersPositions = length - 2;
-               if (charactersRequired === 1) {
-                  charactersPositions= length - 3;
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = charactersPositions;
               }
           }
       }
   }
-  //1121
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-      if (normalRequired === 1) {
-          normalPositions = length - 2;
-          if (numbersRequired === 2) {
-              numbersPositions = ((length - 2) * (length - 3)) / ((number) * (number - 1))
-              if (charactersRequired === 1) {
-                  charactersPositions = length - 4;
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = numbersPositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = numbersPositions;
               }
           }
       }
   }
-  //1122
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-      if (normalRequired ===1) {
-          normalPositions = length - 1;
-          if (numbersRequired === 2) {
-              numbersPositions = ((length - 2) * (length - 3)) / ((number) * (number - 1))
-              if (charactersRequired === 2) {
-                  charactersPositions = ((length - 4) * (length - 5)) / ((character) * (character - 1))
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = numbersPositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = numbersPositions * charactersPositions;
               }
           }
       }
   }
-  //1211
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-      if (normalRequired === 2) {
-          normalPositions = ((length - 1) * (length - 2)) / ((normal) * (normal -1))
-          if (numbersRequired === 1) {
-              numbersPositions = length - 3;
-              if (charactersRequired === 1) {
-                  charactersPositions = length - 4;
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = lowercasePositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = lowercasePositions;
               }
           }
       }
   }
-  //1221
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-      if (normalRequired === 2) {
-           normalPositions = ((length - 1) * (length - 2)) / ((normal) * (normal -1))
-           if (numbersRequired === 2) {
-               numbersPositions = ((length - 3) * (length - 4)) / ((number) * (number - 1))
-               if (charactersRequired === 1) {
-                   charactersPositions = length - 5;
-               }
-           }
-      }
-  }
-  //1222
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-      if (normalRequired === 2) {
-           normalPositions = ((length - 1) * (length - 2)) / ((normal) * (normal -1))
-           if (numbersRequired === 2) {
-               numbersPositions = ((length - 3) * (length - 4)) / ((number) * (number - 1))
-               if (charactersRequired === 2) {
-                   charactersPositions = ((length - 5) * (length - 6)) / ((character) * (character - 1))
-               }
-           }
-      }
-  }
-  // 2111
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
-    if (normalRequired === 1) {
-        normalPositions = length - 2;
-        if (numbersRequired === 1) {
-            numbersPositions = length - 3;
-            if (charactersRequired === 1) {
-                charactersPositions = length - 4;
-            }
-        }
-    }
-}
-  // 2211
-  if (capitalRequired === 2) {
-      capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
-      if (normalRequired === 2) {
-          normalPositions = ((length - 2) * (length - 3)) / ((normalRequired) * (normalRequired -1))
-          if (numbersRequired === 1) {
-              numbersPositions = length - 4;
-              if (charactersRequired === 1) {
-                  charactersPositions = length - 5;
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = lowercasePositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = lowercasePositions * charactersPositions;
               }
           }
       }
   }
-  // 2121
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
-    if (normalRequired === 1) {
-        normalPositions = length - 2;
-        if (numbersPositions === 2) {
-            numbersPositions = ((length - 3) * (length - 4)) / ((numbersRequired) * (numbersRequired -1))
-            if (charactersRequired === 1) {
-                charactersPositions = length - 5
-            }
-        }
-    }
-}
-  // 2112
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
-    if (normalRequired === 1) {
-        normalPositions = length - 2;
-        if (numbersPositions === 1) {
-            numbersPositions = length - 3;
-            if (charactersPositions === 2) {
-                charactersPositions = ((length - 4) * (length - 5)) / ((length) * (length -1))
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = lowercasePositions * numbersPositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = lowercasePositions * numbersPositions;
               }
           }
       }
   }
-  // 1212
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 2) {
-        normalPositions = ((length - 1) * (length - 2)) / ((normalPositions) * (normalPositions - 1))
-        if (numbersRequired === 1) {
-            numbersPositions = length - 3;
-            if (charactersRequired === 2) {
-                charactersPositions = ((length - 4) * (length - 5)) / ((charactersRequired) * (charactersRequired - 1))
-            }
-        }
-    }
-}
-  // 2122
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired -1))
-    if (normalRequired === 1) {
-        normalPositions = length - 2;
-        if (numbersRequired === 2)  {
-            numbersPositions = ((length - 3) * (length - 4)) / ((numbersRequired) * (numbersRequired - 1))
-            if (charactersPositions === 2) {
-                charactersPositions = ((length - 5) * (length - 6)) / ((charactersPositions) * (charactersPositions - 1))
-            }
-        }
-    }
-  }
-  // 2212
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1))
-    if (normalRequired === 2) {
-      normalPositions = ((length - 2) * (length - 3)) / ((normalRequired) * (normalRequired - 1))
-      if (numbersRequired === 1) {
-            numbersPositions = length - 4;
-            if (charactersRequired === 2) {
-                charactersPositions = ((length - 5) * (length - 6)) / ((charactersRequired) * (charactersRequired - 1))
-            }
-        }
-    }
-}
-  // 2221
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1 )) / ((capitalRequired) * (capitalRequired -1))
-    if (normalRequired === 2) {
-        normalPositions = ((length - 2) * (length - 3)) / ((normalRequired) * (normalRequired - 1))
-        if (numbersRequired === 2) {
-            numbersPositions = ((length - 4) * (length - 5)) / ((numbersRequired) * (numbersRequired - 1))
-            if (charactersRequired === 1) {
-                charactersPositions = length - 6;
-            }
-        }
-    }
-  }
-  // 2222
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length -1)) / ((capitalRequired) * (capitalRequired - 1))
-    if (normalRequired === 2) {
-        normalPositions = ((length - 2) * (length -3)) / ((normalRequired) * (normalRequired -1))
-        if (numbersRequired === 2) {
-            numbersPositions = ((length - 4) * (length - 5)) / ((numbersRequired)  * (numbersRequired - 1))
-            if (charactersRequired === 2) {
-                charactersPositions = ((length - 6) * (length - 7)) / ((charactersRequired) * (charactersRequired - 1))
-            }
-        }
-    }
-}
-  // Logic for the 0's
-  // 0111
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 1 ) {
-      normalPositions = length;
-      if (numbersRequired === 1) {
-        numbersPositions = length - 1;
-        if (charactersRequired === 1) {
-          charactersPositions = length - 2;
-        }
+  if (capitalPositions === 0) {
+      combinations = lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = lowercasePositions * numbersPositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = lowercasePositions * numbersPositions * charactersPositions;
+              }
+          }
       }
-    }
   }
-  // 1011
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 0) {
-      normalPositions = 0;
-      if (numbersRequired === 1) {
-        numbersPositions = length - 1;
-        if (charactersRequired === 1) {
-          charactersPositions = length - 1;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions* charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = capitalPositions * numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = capitalPositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = capitalPositions;
+              }
+          }
       }
-    }
   }
-  // 1101
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 1) {
-      normalPositions = length -1;
-      if (numbersRequired === 0) {
-        numbersPositions = 0;
-        if (charactersRequired === 1) {
-          charactersPositions = length -2;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = capitalPositions * numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = capitalPositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = capitalPositions * charactersPositions;
+              }
+          }
       }
-    }
   }
-  //1110
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 1) {
-      normalPositions = length - 1;
-      if (numbersRequired === 1) {
-        numbersPositions = length -2;
-        if (charactersRequired === 0) {
-          charactersPositions = 0;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = capitalPositions * numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = capitalPositions * lowercasePositions * numbersPositions;
+              }
+          }
       }
-    }
   }
-  // 0112
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 1) {
-      normalPositions = length;
-      if (numbersRequired === 1) {
-        numbersPositions = length - 1;
-        if (charactersRequired === 2) {
-          charactersPositions = ((length - 2) * (length - 3)) / ((charactersRequired) * (charactersRequired -1));
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions === 0) {
+          combinations = capitalPositions * numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+              }
+          }
       }
-    }
   }
-  // 0121
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 1) {
-      normalPositions = length;
-      if (numbersRequired === 2) {
-        numbersPositions = ((length - 1) * (length - 2)) / ((numbersRequired) * (numbersRequired - 1));
-        if (charactersRequired === 1) {
-          charactersPositions = length - 3;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = capitalPositions * lowercasePositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = capitalPositions * lowercasePositions;
+              }
+          }
       }
-    }
   }
-  // 0211
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 2) {
-      normalPositions = ((length) * (length - 1)) / ((normalRequired) * (normalRequired - 1));
-      if (numbersRequired === 1) {
-        numbersPositions = length - 2;
-        if (charactersRequired === 1) {
-          charactersPositions = length - 2;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions === 0) {
+              combinations = capitalPositions * lowercasePositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = capitalPositions * lowercasePositions * charactersPositions;
+              }
+          }
       }
-    }
   }
-  // 1021
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 0) {
-      normalPositions = 0;
-      if (numbersRequired === 2) {
-        numbersPositions = ((length - 1) * (length - 2)) / ((numbersRequired) * (numbersRequired - 1));
-        if (charactersRequired === 1) {
-          charactersPositions = length - 3;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+              if (charactersPositions === 0) {
+                  combinations = capitalPositions * lowercasePositions * numbersPositions;
+              }
+          }
       }
-    }
   }
-  // 2011
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
-    if (normalRequired === 0) {
-      normalPositions = 0;
-      if (numbersRequired === 1) {
-        numbersPositions = length - 2;
-        if (charactersRequired === 1) {
-          charactersPositions = length - 3;
-        }
+  if (capitalPositions >= 1) {
+      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+      if (lowercasePositions >= 1) {
+          combinations = capitalPositions	 * lowercasePositions * numbersPositions * charactersPositions;
+          if (numbersPositions >= 1) {
+              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+              if (charactersPositions >= 1) {
+                  combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
+              }
+          }
       }
-    }
-  }
-  // 1012
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 0) {
-      normalPositions = 0;
-      if (numbersRequired === 1) {
-        numbersPositions = length - 1;
-        if (charactersRequired === 2) {
-          charactersPositions = ((length - 2) * (length - 3)) / ((charactersRequired) * (charactersRequired - 1));
-        }
-      }
-    }
-  }
-  // 1102
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 1) {
-      normalPositions = length - 1;
-      if (numbersRequired === 0) {
-        numbersPositions = 0;
-        if (charactersRequired === 2) {
-          charactersPositions = ((length - 2) * (length - 3)) / ((charactersRequired) * (charactersRequired - 1));
-        }
-      }
-    }
-  }
-  // 2101
-  if (capitalRequired === 2) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
-    if (normalRequired === 1) {
-      normalPositions = length - 2;
-      if (numbersRequired === 0) {
-        numbersPositions = 0;
-        if (charactersRequired === 1) {
-          charactersPositions = length - 3;
-        }
-      }
-    }
-  }
-  // 1201
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 2) {
-      normalPositions = ((length - 1) * (length - 2)) / ((normalRequired) * (normalRequired - 1));
-      if (numbersRequired === 0) {
-        numbersPositions = 0;
-        if (charactersRequired === 1) {
-          charactersPositions = length - 3;
-        }
-      }
-    }
-  }
-  // 2110
-  if (capitalRequired === 2) {
-    capitalPositions = ((length)  * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
-    if (normalRequired === 1) {
-      normalPositions = length - 2;
-      if (numbersRequired === 1) {
-        numbersPositions = length - 3;
-        if (charactersRequired === 0) {
-          charactersPositions = 0;
-        }
-      }
-    }
-  }
-  // 1210
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 2) {
-      normalPositions = ((length - 1) * (length - 2)) / ((normalRequired) * (normalRequired - 1));
-      if (numbersRequired === 1) {
-        numbersPositions = length - 3;
-        if (charactersRequired === 0) {
-          charactersPositions = 0;
-        }
-      }
-    }
-  }
-  // 1120
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    if (normalRequired === 1) {
-      normalPositions = length - 1;
-      if (numbersRequired === 2) {
-        numbersPositions = ((;length - 2) * (length - 3)) / ((normalRequired) * (normalRequired - 1));
-        if (charactersRequired === ) {
-          charactersPositions = ;
-        }
-      }
-    }
-  }
-  // 0221
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 2) {
-      normalPositions = ((length) * (;length - 1)) / ((normalRequired) * (normalRequired - 1));
-      if (numbersRequired === 2) {
-        numbersPositions = ((length - 2) * (length - 3)) / ((numbersRequired) * (numbersRequired - 1));
-        if (charactersRequired === 1) {
-          charactersPositions = length - 4;
-        }
-      }
-    }
-  }
-  // 0212
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 2) {
-      normalPositions = ((length) * (length - 1)) / ((normalRequired) * (normalRequired - 1));
-      if (numbersRequired === 1) {
-        numbersPositions = length - 2;
-        if (charactersRequired === 2) {
-          charactersPositions = ((length - 3) * (length - 4)) / ((charactersRequired) * (charactersRequired - 1));
-        }
-      }
-    }
-  }
-  // 0122
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    if (normalRequired === 1) {
-      normalPositions = length;
-      if (numbersRequired === 2) {
-        numbersPositions = ((length - 1) * (length - 2)) / ((numbersRequired) * (numbersRequired - 1));
-        if (charactersRequired === 2) {
-          charactersPositions = ((length - 3) * (length - 4)) / ((charactersRequired) * (charactersRequired));
-        }
-      }
-    }
   }
 
-
-
-
-
-
-
-  /*if (capitalRequired === 0) {
-    let combinations = normalPositions * numbersPositions * charactersPositions;
-    if (normalRequired === 0) {
-      let combinations = numbersPositions * charactersPositions;
-      if (numbersRequired === 0) {
-        let combinations = charactersPositions;
-        if (charactersRequired === 0) {
-          let conbinations = 0;
-        }
-      }
-    }
-  }
-
-  if (normalRequired === 0) {
-    let combinations = capitalPositions * numbersPositions * charactersPositions;
-    if (numbersRequired === 0) {
-      let combinations = capitalPositions * charactersPositions;
-      if (charactersRequired === 0) {
-        let conbinations = capitalPositions;
-      }
-    }
-  }
-
-  else if (numbersRequired === 0) {
-    let combinations = capitalPositions * normalPositions * charactersPositions;
-    if (charactersRequired === 0) {
-      let conbinations = capitalPositions * normalPositions;
-    }
-  }
-
-  else if (charactersRequired === 0) {
-    let conbinations = capitalPositions * normalPositions * numbersPositions;
-  }
-
-  else */
   // The formula
-  if (conbinations === 0) {
+  if (combinations === 0) {
       let formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
   else {

@@ -313,10 +313,12 @@ function calc() {
   if (combinations === 0) {
       let formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
-  else {
+  else if (combinations >= 1) {
     let formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
-
+  else {
+    let formula = "error"
+  }
 
   // Display the output
   document.querySelector('#outputText').innerHTML = formula

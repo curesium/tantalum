@@ -46,23 +46,6 @@ function calc() {
   let numbersPositions;
   let charactersPositions;
 
-
-
-  // Total amount
-  let length = 8;
-
-  // Possible options
-  let lowercase;
-  let capital;
-  let numbers;
-  let characters;
-
-  // Required characters
-  let capitalRequired = 1;
-  let lowercaseRequired = 1;
-  let numbersRequired = 1;
-  let charactersRequired = 1;
-
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
 

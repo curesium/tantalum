@@ -48,6 +48,8 @@ function calc() {
 
   let combinations;
 
+  let formula;
+
   if (capitalRequired === 0) {
       capitalPositions = 0;
   }
@@ -282,13 +284,13 @@ function calc() {
 
   // The formula
   if (combinations === 0) {
-      let formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
+      formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
-  else if (combinations >= 1) {
-    let formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
+  if (combinations >= 1) {
+    formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
-  else {
-    let formula = "error"
+  if (combinations < 0){
+    formula = "error"
   }
 
   // Display the output

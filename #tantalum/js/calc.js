@@ -19,7 +19,7 @@ function calc() {
 
   // Parsing all of the variables to intergers
     // Total amount
-  let length = parseInt(positionsInput.value);
+  let length = parseInt(lengthInput.value);
 
     // Possible options
   let lowercase = parseInt(lowercaseInput.value);

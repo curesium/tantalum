@@ -15,7 +15,7 @@ function calc() {
   let lowercaseRequiredInput = document.querySelector('[name="lowercaseRequired"]');
   let capitalRequiredInput = document.querySelector('[name="capitalRequired"]');
   let numbersRequiredInput = document.querySelector('[name="numbersRequired"]');
-  let charactersRequired = document.querySelector('[name="charactersRequired"]');
+  let charactersRequiredInput = document.querySelector('[name="charactersRequired"]');
 
   // Parsing all of the variables to intergers
     // Total amount
@@ -31,7 +31,7 @@ function calc() {
   let lowercaseRequired = parseInt(lowercaseRequiredInput.value);
   let capitalRequired = parseInt(capitalRequiredInput.value);
   let numbersRequired = parseInt(numbersRequiredInput.value);
-  let charactersRequired = parseInt(numbersRequiredInput.value);
+  let charactersRequired = parseInt(charactersRequiredInput.value);
 
 
   // Total amount of characters

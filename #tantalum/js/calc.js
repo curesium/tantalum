@@ -2,7 +2,7 @@
 function calc() {
 
   // The total amount of positions available
-  let lengthInput = document.querySelector('[name="positions"]');
+  let positionsInput = document.querySelector('[name="positions"]');
 
   // All of the different kind of characters possible
     // Possible options
@@ -19,7 +19,7 @@ function calc() {
 
   // Parsing all of the variables to intergers
     // Total amount
-  let length = parseInt(lengthInput.value);
+  let length = parseInt(positionsInput.value);
 
     // Possible options
   let lowercase = parseInt(lowercaseInput.value);

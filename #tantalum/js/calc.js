@@ -42,18 +42,6 @@ function calc() {
 
   // Possible combinations
   let capitalPositions;
-  let normalPositions;
-  let numbersPositions;
-  let charactersPositions;
-
-  // Total amount of characters
-  let total = lowercase + capital + numbers + characters;
-
-  // Total amount of required characters
-  let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
-
-  // Possible combinations
-  let capitalPositions;
   let lowercasePositions;
   let numbersPositions;
   let charactersPositions;

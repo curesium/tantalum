@@ -50,237 +50,62 @@ function calc() {
 
   let formula;
 
+  let capitalPositionsDef;
+  let lowercasePositionsDef;
+  let numbersPositionsDef;
+  let charactersPositionsDef;
+
   if (capitalRequired === 0) {
-      capitalPositions = 0;
-  }
-  if (capitalRequired === 1) {
-      capitalPositions = length;
-  }
-  if (capitalRequired === 2 ) {
-      capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
-  }
-  if (lowercaseRequired === 0) {
-      lowercasePositions = 0;
-  }
-  if (lowercaseRequired === 1) {
-      lowercasePositions = length - capitalRequired;
-  }
-  if (lowercaseRequired === 2) {
-      lowercasePositions = ((length - capitalRequired) * (length - capitalRequired - 1)) / ((lowercaseRequired) * (lowercaseRequired - 1));
-  }
-  if (numbersRequired === 0) {
-      numbersPositions = 0;
-  }
-  if (numbersRequired === 1) {
-      numbersPositions = length - capitalRequired - lowercaseRequired;
-  }
-  if (numbersRequired === 2) {
-      numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1)) / ((numbersRequired) * (numbersRequired - 1));
-  }
-  if (charactersRequired === 0) {
-      charactersPositions = 0;
-  }
-  if (charactersRequired === 1) {
-      charactersPositions = length - capitalRequired - lowercaseRequired - numbersRequired;
-  }
-  if (charactersRequired === 2) {
-      charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1)) / ((charactersRequired) * (charactersRequired - 1));
-  }
+        capitalPositions = 0;
+        capitalPositionsDef = 0;
+    }
+    if (capitalRequired === 1) {
+        capitalPositions = length;
+        capitalPositionsDef = 1;
+    }
+    if (capitalRequired === 2 ) {
+        capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
+        capitalPositionsDef = 1;
+    }
+    if (lowercaseRequired === 0) {
+        lowercasePositions = 0;
+        lowercasePositionsDef = 0;
+    }
+    if (lowercaseRequired === 1) {
+        lowercasePositions = length - capitalRequired;
+        lowercasePositionsDef = 1;
+    }
+    if (lowercaseRequired === 2) {
+        lowercasePositions = ((length - capitalRequired) * (length - capitalRequired - 1)) / ((lowercaseRequired) * (lowercaseRequired - 1));
+        lowercasePositionsDef = 1;
+    }
+    if (numbersRequired === 0) {
+        numbersPositions = 0;
+        numbersPositionsDef = 0;
+    }
+    if (numbersRequired === 1) {
+        numbersPositions = length - capitalRequired - lowercaseRequired;
+        numbersPositionsDef = 1;
+    }
+    if (numbersRequired === 2) {
+        numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1)) / ((numbersRequired) * (numbersRequired - 1));
+        numbersPositionsDef = 1;
+    }
+    if (charactersRequired === 0) {
+        charactersPositions = 0;
+        charactersPositionsDef = 0;
+    }
+    if (charactersRequired === 1) {
+        charactersPositions = length - capitalRequired - lowercaseRequired - numbersRequired;
+        charactersPositionsDef = 1;
+    }
+    if (charactersRequired === 2) {
+        charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1)) / ((charactersRequired) * (charactersRequired - 1));
+        charactersPositionsDef = 1;
+    }
 
+    	combinations = (capitalPositions ** capitalPositionsDef) * (lowercasePositions ** lowercasePositionsDef) * (numbersPositions ** numbersPositionsDef) * (charactersPositions ** charactersPositionsDef)
 
-
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = 0;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = numbersPositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = numbersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = numbersPositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = numbersPositions * charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = lowercasePositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = lowercasePositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = lowercasePositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = lowercasePositions * charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = lowercasePositions * numbersPositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = lowercasePositions * numbersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions === 0) {
-      combinations = lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = lowercasePositions * numbersPositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = lowercasePositions * numbersPositions * charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions* charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = capitalPositions * numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = capitalPositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = capitalPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = capitalPositions * numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = capitalPositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = capitalPositions * charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = capitalPositions * numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = capitalPositions * lowercasePositions * numbersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions === 0) {
-          combinations = capitalPositions * numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = capitalPositions * lowercasePositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = capitalPositions * lowercasePositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions === 0) {
-              combinations = capitalPositions * lowercasePositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = capitalPositions * lowercasePositions * charactersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-              if (charactersPositions === 0) {
-                  combinations = capitalPositions * lowercasePositions * numbersPositions;
-              }
-          }
-      }
-  }
-  if (capitalPositions >= 1) {
-      combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-      if (lowercasePositions >= 1) {
-          combinations = capitalPositions	 * lowercasePositions * numbersPositions * charactersPositions;
-          if (numbersPositions >= 1) {
-              combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-              if (charactersPositions >= 1) {
-                  combinations = capitalPositions * lowercasePositions * numbersPositions * charactersPositions;
-              }
-          }
-      }
-  }
 
   // The formula
   if (combinations === 0) {

@@ -21,6 +21,9 @@ In case you run into a error, it *should* display an error. You can check the er
 The math is done by the following people:
 * [Twanman1412](https://github.com/twanman1412)
 
-## Other
-The other things are done by:
-* [Thijs Boom](https://github.com/twboom)
+### Errors
+* [Kwember05]('https://github.com/kwember05')
+
+### Interface
+The Interface is done by:
+* [twboom](https://github.com/twboom)

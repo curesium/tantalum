@@ -84,7 +84,7 @@ function calc() {
         lowercasePositionsDef = 1;
     }
     if (lowercaseRequired === 3) {
-      lowercasePositions = ((length capitalRequired) * (length- capitalRequired - 1) * (length - capitalRequired - 2)) / ((lowercaseRequired) * (lowercaseRequired - 1) * (lowercaseRequired - 2));
+      lowercasePositions = ((length - capitalRequired) * (length- capitalRequired - 1) * (length - capitalRequired - 2)) / ((lowercaseRequired) * (lowercaseRequired - 1) * (lowercaseRequired - 2));
       lowercasePositionsDef = 1;
     }
     if (numbersRequired === 0) {

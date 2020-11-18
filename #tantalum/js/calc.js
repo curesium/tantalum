@@ -67,6 +67,10 @@ function calc() {
         capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
         capitalPositionsDef = 1;
     }
+    if (capitalRequired === 3) {
+      capitalPositions = ((length) * (length - 1) * (length - 2)) / ((capitalRequired) * (capitalRequired - 1) * (capitalRequired - 2));
+      capitalPositionsDef = 1;
+    }
     if (lowercaseRequired === 0) {
         lowercasePositions = 0;
         lowercasePositionsDef = 0;
@@ -78,6 +82,10 @@ function calc() {
     if (lowercaseRequired === 2) {
         lowercasePositions = ((length - capitalRequired) * (length - capitalRequired - 1)) / ((lowercaseRequired) * (lowercaseRequired - 1));
         lowercasePositionsDef = 1;
+    }
+    if (lowercaseRequired === 3) {
+      lowercasePositions = ((length capitalRequired) * (length- capitalRequired - 1) * (length - capitalRequired - 2)) / ((lowercaseRequired) * (lowercaseRequired - 1) * (lowercaseRequired - 2));
+      lowercasePositionsDef = 1;
     }
     if (numbersRequired === 0) {
         numbersPositions = 0;
@@ -91,6 +99,10 @@ function calc() {
         numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1)) / ((numbersRequired) * (numbersRequired - 1));
         numbersPositionsDef = 1;
     }
+    if (numbersRequired === 3) {
+      numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1) * (length - capitalRequired - lowercaseRequired - 2)) / ((numbersRequired) * (numbersRequired - 1) * (numbersRequired - 2));
+      numbersPositionsDef = 1;
+    }
     if (charactersRequired === 0) {
         charactersPositions = 0;
         charactersPositionsDef = 0;
@@ -102,6 +114,10 @@ function calc() {
     if (charactersRequired === 2) {
         charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1)) / ((charactersRequired) * (charactersRequired - 1));
         charactersPositionsDef = 1;
+    }
+    if (charactersRequired === 3) {
+      charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1) * (length - capitalRequired - lowercaseRequired - numbersRequired - 2)) / ((charactersRequired) * (charactersRequired - 1) * (charactersRequired - 2));
+      charactersPositionsDef = 1;
     }
 
     	combinations = (capitalPositions ** capitalPositionsDef) * (lowercasePositions ** lowercasePositionsDef) * (numbersPositions ** numbersPositionsDef) * (charactersPositions ** charactersPositionsDef)

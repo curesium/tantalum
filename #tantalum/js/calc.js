@@ -122,6 +122,31 @@ function calc() {
 
     	combinations = (capitalPositions ** capitalPositionsDef) * (lowercasePositions ** lowercasePositionsDef) * (numbersPositions ** numbersPositionsDef) * (charactersPositions ** charactersPositionsDef)
 
+  //Errors if Required is longer then total
+  if (totalRequired > total) {
+    formula = "Error: E1-4";
+     if (lowercaseRequiredInput > total) {
+       formula = "Error: E1-1";
+        if (capitalRequiredInput > total) {
+          formula = "Error: E1-2";
+           if (numbersRequiredInput > total) {
+             formula = "Error: E1-3";
+                            }
+                       }
+                  }
+            }
+  // Errors if Required is more than 2
+  if (lowercaseRequired > 3 <= total) {
+    formula = "Error: E2-1";
+      if (capitalRequired > 3 <= total) {
+        formula = "Error: E2-2";
+         if (numbersRequired > 3 <= total) {
+           formula = "Error: E2-3";
+            if (charactersRequired > 3 < total) {
+              formula = "Error: E2-4"
+            }
+          }
+        }
 
   // The formula
   if (combinations === 0) {

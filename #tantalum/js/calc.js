@@ -143,7 +143,7 @@ function calc() {
          if (numbersRequired > 3 <= total) {
            formula = "Error: E2-3";
             if (charactersRequired > 3 <= total) {
-              formula = "Error: E2-4"
+              formula = "Error: E2-4";
             }
           }
         }

@@ -3,8 +3,7 @@ TANTALUM is a tool to calculate the number of passwords that follow certain rule
 **THIS TOOL IS IN A DEVELOPMENT STAGE! IT DOES NOT WORK YET!**
 
 ## How to use it
-It's a webtool, so you don't have to install anythings.
-Go to the website in the 'About' section.
+For a guide how to use it, head over to the "How to use it" wiki page, linked [here](https://github.com/curesium/tantalum/wiki/how-to-use-it)
 
 ### What does this fields do?
 * **POSITIONS:** This field is for how many positions there are in your password

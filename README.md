@@ -22,7 +22,7 @@ The math is done by the following people:
 * [Twanman1412](https://github.com/twanman1412)
 
 ### Errors
-* [Kwember05]('https://github.com/kwember05')
+* [Kwember05](https://github.com/kwember05)
 
 ### Interface
 The Interface is done by:

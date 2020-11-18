@@ -147,7 +147,7 @@ function calc() {
             }
           }
         }
-
+      }
   // The formula
   if (combinations === 0) {
       formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));

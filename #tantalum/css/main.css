@@ -52,12 +52,25 @@ label {
 }
 
 input {
-  display: block;
   margin: auto;
 
   margin-bottom: 10px;
 
   font-size: 32px;
+}
+
+.item {
+  display: block;
+}
+
+label.item {
+  color: blue;
+  align: left;
+}
+
+input.item {
+  text-align: right;
+  font-size: 100px;
 }
 
   /* Answer */

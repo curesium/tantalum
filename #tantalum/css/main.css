@@ -49,28 +49,31 @@ a.source {
   /* Input */
 label {
   font-size: 32px;
+  margin-right: 10px;
 }
 
 input {
-  margin: auto;
-
   margin-bottom: 10px;
+  margin-left: 10px;
 
   font-size: 32px;
 }
 
+#toolInputFields {
+  display: table;
+}
+
 .item {
-  display: block;
+  display: table-row;
 }
 
-label.item {
-  color: blue;
-  align: left;
-}
-
-input.item {
+label {
+  display: table-cell;
   text-align: right;
-  font-size: 100px;
+}
+
+input {
+  text-align: left;
 }
 
   /* Answer */
@@ -88,6 +91,10 @@ input.item {
 }
 
   /* Submit button */
+  .submitButtonContainer {
+    align-content: center;
+}
+
 .submitButton {
   font-family: 'Quicksand';
   color: #FFFFFF;

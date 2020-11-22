@@ -40,8 +40,8 @@ a.source {
 
 /* Tool */
 #tool {
-  width: 48vw;
-  margin-left: 25vw;
+  width: 80vw;
+  margin-left: 10vw;
 
   text-align: center;
 }
@@ -49,15 +49,59 @@ a.source {
   /* Input */
 label {
   font-size: 32px;
+  margin-right: 10px;
 }
 
 input {
-  display: block;
-  margin: auto;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  font-size: 32px;
+
+  background-color: #616161;
+  color: #FFFFFF;
+
+  padding-left: 10px;
+
+  border: hidden;
+  border-radius: 10px;
+}
+
+input:focus {
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: #363636;
+  outline: none;
+  margin-bottom: 7px;
+}
+
+::placeholder {
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  color: #FFFFFF;
+}
+
+#toolInputFields {
+  display: table;
+
+  margin: 0 auto;
+}
+
+#length, #requiredAmounts, #characterSpecifications {
+  border: solid;
+  border-color: #363636;
+  border-radius: 10px;
+
+  text-align: center;
 
   margin-bottom: 10px;
 
-  font-size: 32px;
+  padding: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
 }
 
   /* Answer */
@@ -75,6 +119,10 @@ input {
 }
 
   /* Submit button */
+.submitButtonContainer {
+  align-content: center;
+}
+
 .submitButton {
   font-family: 'Quicksand';
   color: #FFFFFF;
@@ -93,6 +141,11 @@ input {
 }
 
 .submitButton:hover {
-  padding: 20px;
-  margin-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.submitButton:active {
+  background-color: #FFFFFF;
+  color: #000000;
 }

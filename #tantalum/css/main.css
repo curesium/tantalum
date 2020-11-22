@@ -78,18 +78,8 @@ input {
 }
 
 .item {
-  display: table-row;
-}
-
-label {
-  display: table-cell;
-  text-align: right;
-}
-
-input {
-  display: inline-flex;
-  align: right;
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
 }
 
   /* Answer */

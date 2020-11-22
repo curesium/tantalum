@@ -97,8 +97,8 @@ input {
 }
 
   /* Submit button */
-  .submitButtonContainer {
-    align-content: center;
+.submitButtonContainer {
+  align-content: center;
 }
 
 .submitButton {

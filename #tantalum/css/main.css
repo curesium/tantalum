@@ -57,6 +57,28 @@ input {
   margin-left: 10px;
 
   font-size: 32px;
+
+  background-color: #616161;
+  color: #FFFFFF;
+
+  padding-left: 10px;
+
+  border: hidden;
+  border-radius: 10px;
+}
+
+input:focus {
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: #363636;
+  outline: none;
+  margin-bottom: 7px;
+}
+
+::placeholder {
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  color: #FFFFFF;
 }
 
 #toolInputFields {

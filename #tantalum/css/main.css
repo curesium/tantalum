@@ -122,3 +122,8 @@ input {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.submitButton:active {
+  background-color: #FFFFFF;
+  color: #000000;
+}

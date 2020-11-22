@@ -40,8 +40,8 @@ a.source {
 
 /* Tool */
 #tool {
-  width: 48vw;
-  margin-left: 25vw;
+  width: 80vw;
+  margin-left: 10vw;
 
   text-align: center;
 }
@@ -61,6 +61,20 @@ input {
 
 #toolInputFields {
   display: table;
+
+  margin: 0 auto;
+}
+
+#length, #requiredAmounts, #characterSpecifications {
+  border: solid;
+  border-color: #363636;
+  border-radius: 10px;
+
+  text-align: center;
+
+  margin-bottom: 10px;
+
+  padding: 10px;
 }
 
 .item {
@@ -73,6 +87,8 @@ label {
 }
 
 input {
+  display: inline-flex;
+  align: right;
   text-align: left;
 }
 

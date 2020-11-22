@@ -119,6 +119,6 @@ input {
 }
 
 .submitButton:hover {
-  padding: 20px;
-  margin-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
 }

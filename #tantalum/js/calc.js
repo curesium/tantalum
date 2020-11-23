@@ -123,26 +123,29 @@ function calc() {
     	combinations = (capitalPositions ** capitalPositionsDef) * (lowercasePositions ** lowercasePositionsDef) * (numbersPositions ** numbersPositionsDef) * (charactersPositions ** charactersPositionsDef)
 
   //Errors if Required is longer then total
-  if (totalRequired > total) {
-    formula = "Error: E1-4";
-     if (lowercaseRequiredInput > total) {
+  if (totalRequired > length) {
+    formula = "Error: E1-5";
+     if (lowercaseRequired > length) {
        formula = "Error: E1-1";
-        if (capitalRequiredInput > total) {
+        if (capitalRequired > length) {
           formula = "Error: E1-2";
-           if (numbersRequiredInput > total) {
+           if (numbersRequired > length) {
              formula = "Error: E1-3";
+              if (charactersRequired > length) {
+                formula = "E1-4"
+                                }
                             }
                        }
                   }
             }
   // Errors if Required is more than 2
-  if (lowercaseRequired > 3 <= total) {
+  if (lowercaseRequired > 3 <= length) {
     formula = "Error: E2-1";
-      if (capitalRequired > 3 <= total) {
+      if (capitalRequired > 3 <= length) {
         formula = "Error: E2-2";
-         if (numbersRequired > 3 <= total) {
+         if (numbersRequired > 3 <= length) {
            formula = "Error: E2-3";
-            if (charactersRequired > 3 <= total) {
+            if (charactersRequired > 3 <= length) {
               formula = "Error: E2-4";
             }
           }

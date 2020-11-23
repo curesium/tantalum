@@ -1,7 +1,7 @@
 {
   "name": "tantalum",
   "version": "1.0.0",
-  "description": "TANTool to calculate number of passwords possible with variable limitations",
+  "description": "Tool to calculate number of passwords possible with variable limitations",
   "main": "main.js",
   "scripts": {
     "start": "electron ."

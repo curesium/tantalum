@@ -4,7 +4,7 @@
   "description": "TANTool to calculate number of passwords possible with variable limitations",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",

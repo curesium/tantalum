@@ -132,7 +132,7 @@ function calc() {
            if (numbersRequired > length) {
              formula = "Error: E1-3";
               if (charactersRequired > length) {
-                formula = "E1-4"
+                formula = "Error: E1-4";
                                 }
                             }
                        }

@@ -14,5 +14,8 @@
     "calculator"
   ],
   "author": "CURESIUM",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "electron": "^11.0.2"
+  }
 }

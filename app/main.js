@@ -25,6 +25,17 @@ app.on('ready', function(){
 
 // Create menu template
 const mainMenuTemplate = [{
-  label: 'File'
+  label: 'TANTALUM',
+  submenu: [
+    {
+      label: 'Reset'
+    },
+    {
+      label: 'Quit',
+      click(){
+        app.quit();
+      }
+    }
+  ]
 }
 ];

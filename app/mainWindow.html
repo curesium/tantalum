@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TANTALUM</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+  </head>
+  <body>
+
+    <header>
+      <h1 class="header">TANTALUM</h1>
+      <h2 class="header">by CURESIUM</h2>
+      <h3 class="header">Version: 1.0.0</h3>
+      <p class="links">
+        <a class="source" href="https://github.com/curesium/tantalum/wiki/How-to-use-it">How to use it</a>
+        |
+        <a class="source" href="https://github.com/curesium/tantalum">Source code on GitHub</a>
+      </p>
+    </header>
+
+    <div id="tool">
+      <h1 class="tool">TOOL</h1>
+      <div id="toolInput">
+        <div id="toolInputFields">
+          <div id="length">
+            <div class="item">
+              <label for="length">Lenght</label>
+              <input type="number" name="length" min="1" placeholder="Length">
+            </div>
+          </div>
+
+            <div id="requiredAmounts">
+              <div class="item">
+                <label for="lowercaseRequired">Required Lowercase</label>
+                <input type="number" name="lowercaseRequired" min="0" placeholder="Required Lowercase">
+              </div>
+
+              <div class="item">
+                <label for="capitalRequired">Required Capitals</label>
+                <input type="number" name="capitalRequired" min="0" placeholder="Required Capitals">
+              </div>
+
+              <div class="item">
+                <label for="lowercaseRequired">Required Numbers</label>
+                <input type="number" name="numbersRequired" min="0" placeholder="Required Numbers">
+              </div>
+
+              <div class="item">
+                <label for="charactersRequired">Required Characters</label>
+                <input type="number" name="charactersRequired" min="0" placeholder="Required Characters">
+              </div>
+            </div>
+
+            <div id="characterSpecifications">
+              <div class="item">
+                <label for="lowercase">Lowercase</label>
+                <input type="number" name="lowercase" min="0" placeholder="Lowercase">
+              </div>
+              <div class="item">
+                <label for="capital">Capital</label>
+                <input type="number" name="capital" min="0" placeholder="Capital">
+              </div>
+              <div class="item">
+                <label id="hello" for="number">Numbers</label>
+                <input type="number" name="numbers" min="0" placeholder="Numbers">
+              </div>
+              <div class="item">
+                <label for="characters">Characters</label>
+                <input type="number" name="characters" min="0" placeholder="Characters">
+              </div>
+            </div>
+          <div class="submitButtonContainer">
+            <input class="submitButton" type="submit" name="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+      <div id="toolOutput">
+        <p id="outputText">Answer</p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/calc.js"></script>
+  </body>
+</html>

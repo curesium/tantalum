@@ -37,8 +37,19 @@ const mainMenuTemplate = [{
       }
     }
   ]
-}
-];
+}];
+
+mainMenuTemplate.push({
+  label: 'DevTools',
+  submenu: [
+    {
+      label: 'Toggle DevTools',
+      click(item, focusedWindow){
+        focusedWindow.toggleDevTools();
+      }
+    }
+  ]
+})
 
 // If Mac, add empty object to menu
 if(process.platfrom == 'darwin'){

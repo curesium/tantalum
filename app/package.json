@@ -17,5 +17,8 @@
   "license": "GPL-3.0",
   "dependencies": {
     "electron": "^11.0.2"
+  },
+  "devDependencies": {
+    "electron-package": "^0.1.0"
   }
 }

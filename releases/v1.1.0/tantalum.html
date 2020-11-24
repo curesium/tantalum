@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TANTALUM by CURESIUM</title>
+    <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+    /* For the whole document */
+    html {
+      font-family: 'Quicksand';
+      color: #FFFFFF;
+
+      background-color: #4D4C4C;
+    }
+
+
+    /* Header */
+    header {
+      background: #363636;
+
+      padding: 20px;
+
+      border: hidden;
+      border-radius: 10px
+    }
+
+    .header {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    h1.header {
+      font-size: 64px;
+      margin: 0px;
+    }
+
+    a.source {
+      color: #FFFFFF;
+
+      text-decoration: none;
+
+      margin: 0px;
+    }
+
+    /* Tool */
+    #tool {
+      width: 80vw;
+      margin-left: 10vw;
+
+      text-align: center;
+    }
+
+      /* Input */
+    label {
+      font-size: 32px;
+      margin-right: 10px;
+    }
+
+    input {
+      margin-bottom: 10px;
+      margin-left: 10px;
+
+      font-size: 32px;
+
+      background-color: #616161;
+      color: #FFFFFF;
+
+      padding-left: 10px;
+
+      border: hidden;
+      border-radius: 10px;
+    }
+
+    input:focus {
+      border-bottom: solid;
+      border-width: 3px;
+      border-color: #363636;
+      outline: none;
+      margin-bottom: 7px;
+    }
+
+    ::placeholder {
+      font-family: 'Quicksand';
+      font-weight: lighter;
+      color: #FFFFFF;
+    }
+
+    #toolInputFields {
+      display: table;
+
+      margin: 0 auto;
+    }
+
+    #length, #requiredAmounts, #characterSpecifications {
+      border: solid;
+      border-color: #363636;
+      border-radius: 10px;
+
+      text-align: center;
+
+      margin-bottom: 10px;
+
+      padding: 10px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+      /* Answer */
+    #toolOutput {
+      background-color: #363636;
+
+      padding: 10px;
+
+      border: hidden;
+      border-radius: 10px;
+    }
+
+    #outputText {
+      font-size: 32px;
+    }
+
+      /* Submit button */
+    .submitButtonContainer {
+      align-content: center;
+    }
+
+    .submitButton {
+      font-family: 'Quicksand';
+      color: #FFFFFF;
+
+      background-color: #363636;
+
+      padding: 10px;
+      margin-bottom: 25px;
+
+      border: hidden;
+      border-radius: 5px;
+
+      transition: 0.5s;
+
+      -webkit-appearance: none;
+    }
+
+    .submitButton:hover {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .submitButton:active {
+      background-color: #FFFFFF;
+      color: #000000;
+    }
+    </style>
+    <style>
+    /* width */
+    ::-webkit-scrollbar {
+      display: block;
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #4D4C4C;
+      height: 50px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #777777;
+      border: hidden;
+      border-radius: 10px;
+      max-height: 50px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ababab;
+      max-height: 50px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1 class="header">TANTALUM</h1>
+      <h2 class="header">by CURESIUM</h2>
+      <p class="links">
+        <a class="source" href="https://github.com/curesium/tantalum/wiki/How-to-use-it">How to use it</a>
+        |
+        <a class="source" href="https://github.com/curesium/tantalum">Source code on GitHub</a>
+      </p>
+    </header>
+
+    <div id="tool">
+      <h1 class="tool">TOOL</h1>
+      <div id="toolInput">
+        <div id="toolInputFields">
+          <div id="length">
+            <div class="item">
+              <label for="length">Lenght</label>
+              <input type="number" name="length" min="1" placeholder="Length">
+            </div>
+          </div>
+
+            <div id="requiredAmounts">
+              <div class="item">
+                <label for="lowercaseRequired">Required Lowercase</label>
+                <input type="number" name="lowercaseRequired" min="0" placeholder="Required Lowercase">
+              </div>
+
+              <div class="item">
+                <label for="capitalRequired">Required Capitals</label>
+                <input type="number" name="capitalRequired" min="0" placeholder="Required Capitals">
+              </div>
+
+              <div class="item">
+                <label for="lowercaseRequired">Required Numbers</label>
+                <input type="number" name="numbersRequired" min="0" placeholder="Required Numbers">
+              </div>
+
+              <div class="item">
+                <label for="charactersRequired">Required Characters</label>
+                <input type="number" name="charactersRequired" min="0" placeholder="Required Characters">
+              </div>
+            </div>
+
+            <div id="characterSpecifications">
+              <div class="item">
+                <label for="lowercase">Lowercase</label>
+                <input type="number" name="lowercase" min="0" placeholder="Lowercase">
+              </div>
+              <div class="item">
+                <label for="capital">Capital</label>
+                <input type="number" name="capital" min="0" placeholder="Capital">
+              </div>
+              <div class="item">
+                <label id="hello" for="number">Numbers</label>
+                <input type="number" name="numbers" min="0" placeholder="Numbers">
+              </div>
+              <div class="item">
+                <label for="characters">Characters</label>
+                <input type="number" name="characters" min="0" placeholder="Characters">
+              </div>
+            </div>
+          <div class="submitButtonContainer">
+            <input class="submitButton" type="submit" name="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+      <div id="toolOutput">
+        <p id="outputText">Answer</p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      // Function to calculate the numbers
+      function calc() {
+
+        // The total amount of positions available
+        let lengthInput = document.querySelector('[name="length"]');
+      
+        // All of the different kind of characters possible
+          // Possible options
+        let lowercaseInput = document.querySelector('[name="lowercase"]');
+        let capitalInput = document.querySelector('[name="capital"]');
+        let numbersInput = document.querySelector('[name="numbers"]');
+        let charactersInput = document.querySelector('[name="characters"]');
+
+        // Required characters
+        let lowercaseRequiredInput = document.querySelector('[name="lowercaseRequired"]');
+        let capitalRequiredInput = document.querySelector('[name="capitalRequired"]');
+        let numbersRequiredInput = document.querySelector('[name="numbersRequired"]');
+        let charactersRequiredInput = document.querySelector('[name="charactersRequired"]');
+
+        // Parsing all of the variables to intergers
+          // Total amount
+        let length = parseInt(lengthInput.value);
+
+          // Possible options
+        let lowercase = parseInt(lowercaseInput.value);
+        let capital = parseInt(capitalInput.value);
+        let numbers = parseInt(numbersInput.value);
+        let characters = parseInt(charactersInput.value);
+
+        // Required characters
+        let lowercaseRequired = parseInt(lowercaseRequiredInput.value);
+        let capitalRequired = parseInt(capitalRequiredInput.value);
+        let numbersRequired = parseInt(numbersRequiredInput.value);
+        let charactersRequired = parseInt(charactersRequiredInput.value);
+
+
+        // Total amount of characters
+        let total = lowercase + capital + numbers + characters;
+
+        // Total amount of required characters
+        let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
+
+        // Possible combinations
+        let capitalPositions;
+        let lowercasePositions;
+        let numbersPositions;
+        let charactersPositions;
+
+        let combinations;
+
+        let formula;
+
+        let capitalPositionsDef;
+        let lowercasePositionsDef;
+        let numbersPositionsDef;
+        let charactersPositionsDef;
+
+        if (capitalRequired === 0) {
+              capitalPositions = 0;
+              capitalPositionsDef = 0;
+          }
+          if (capitalRequired === 1) {
+              capitalPositions = length;
+              capitalPositionsDef = 1;
+          }
+          if (capitalRequired === 2 ) {
+              capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
+              capitalPositionsDef = 1;
+          }
+          if (capitalRequired === 3) {
+            capitalPositions = ((length) * (length - 1) * (length - 2)) / ((capitalRequired) * (capitalRequired - 1) * (capitalRequired - 2));
+            capitalPositionsDef = 1;
+          }
+          if (lowercaseRequired === 0) {
+              lowercasePositions = 0;
+              lowercasePositionsDef = 0;
+          }
+          if (lowercaseRequired === 1) {
+              lowercasePositions = length - capitalRequired;
+              lowercasePositionsDef = 1;
+          }
+          if (lowercaseRequired === 2) {
+              lowercasePositions = ((length - capitalRequired) * (length - capitalRequired - 1)) / ((lowercaseRequired) * (lowercaseRequired - 1));
+              lowercasePositionsDef = 1;
+          }
+          if (lowercaseRequired === 3) {
+            lowercasePositions = ((length - capitalRequired) * (length- capitalRequired - 1) * (length - capitalRequired - 2)) / ((lowercaseRequired) * (lowercaseRequired - 1) * (lowercaseRequired - 2));
+            lowercasePositionsDef = 1;
+          }
+          if (numbersRequired === 0) {
+              numbersPositions = 0;
+              numbersPositionsDef = 0;
+          }
+          if (numbersRequired === 1) {
+              numbersPositions = length - capitalRequired - lowercaseRequired;
+              numbersPositionsDef = 1;
+          }
+          if (numbersRequired === 2) {
+              numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1)) / ((numbersRequired) * (numbersRequired - 1));
+              numbersPositionsDef = 1;
+          }
+          if (numbersRequired === 3) {
+            numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1) * (length - capitalRequired - lowercaseRequired - 2)) / ((numbersRequired) * (numbersRequired - 1) * (numbersRequired - 2));
+            numbersPositionsDef = 1;
+          }
+          if (charactersRequired === 0) {
+              charactersPositions = 0;
+              charactersPositionsDef = 0;
+          }
+          if (charactersRequired === 1) {
+              charactersPositions = length - capitalRequired - lowercaseRequired - numbersRequired;
+              charactersPositionsDef = 1;
+          }
+          if (charactersRequired === 2) {
+              charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1)) / ((charactersRequired) * (charactersRequired - 1));
+              charactersPositionsDef = 1;
+          }
+          if (charactersRequired === 3) {
+            charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1) * (length - capitalRequired - lowercaseRequired - numbersRequired - 2)) / ((charactersRequired) * (charactersRequired - 1) * (charactersRequired - 2));
+            charactersPositionsDef = 1;
+          }
+
+            combinations = (capitalPositions ** capitalPositionsDef) * (lowercasePositions ** lowercasePositionsDef) * (numbersPositions ** numbersPositionsDef) * (charactersPositions ** charactersPositionsDef)
+
+        //Errors if Required is longer then total
+        if (totalRequired > length) {
+          formula = "Error: E1-5";
+           if (lowercaseRequired > length) {
+             formula = "Error: E1-1";
+              if (capitalRequired > length) {
+                formula = "Error: E1-2";
+                 if (numbersRequired > length) {
+                   formula = "Error: E1-3";
+                    if (charactersRequired > length) {
+                      formula = "E1-4"
+                                      }
+                                  }
+                             }
+                        }
+                  }
+        // Errors if Required is more than 2
+        if (lowercaseRequired > 3 <= length) {
+          formula = "Error: E2-1";
+            if (capitalRequired > 3 <= length) {
+              formula = "Error: E2-2";
+               if (numbersRequired > 3 <= length) {
+                 formula = "Error: E2-3";
+                  if (charactersRequired > 3 <= length) {
+                    formula = "Error: E2-4";
+                  }
+                }
+              }
+            }
+        // The formula
+        if (combinations === 0) {
+            formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
+        }
+        if (combinations >= 1) {
+          formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
+        }
+        if (combinations < 0){
+          formula = "error"
+        }
+
+        // Display the output
+        document.querySelector('#outputText').innerHTML = formula
+      }
+
+
+      // For the submit button
+      let submit = document.querySelector('[type="submit"]');
+      submit.addEventListener('click', calc);
+    </script>
+  </body>
+</html>

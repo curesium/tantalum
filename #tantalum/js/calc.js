@@ -124,32 +124,32 @@ function calc() {
 
   //Errors if Required is longer then total
   if (totalRequired > length) {
-    formula = "Error: E1-5"};
+    return formula = "Error: E1-5"};
 
   if (lowercaseRequired > length) {
-    formula = "Error: E1-1"};
+    return formula = "Error: E1-1"};
 
   if (capitalRequired > length) {
-    formula = "Error: E1-2"};
+    return formula = "Error: E1-2"};
 
   if (numbersRequired > length) {
-    formula = "Error: E1-3"};
+    return formula = "Error: E1-3"};
 
   if (charactersRequired > length) {
-    formula = "Error: E1-4"};
+    return formula = "Error: E1-4"};
 
   // Errors if Required is more than 2
   if (lowercaseRequired > 3 <= length) {
-    formula = "Error: E2-1"};
+    return formula = "Error: E2-1"};
 
   if (capitalRequired > 3 <= length) {
-    formula = "Error: E2-2"};
+    return formula = "Error: E2-2"};
 
   if (numbersRequired > 3 <= length) {
-    formula = "Error: E2-3"};
+    return formula = "Error: E2-3"};
 
   if (charactersRequired > 3 <= length) {
-    formula = "Error: E2-4"};
+    return formula = "Error: E2-4"};
 
   // The formula
   if (combinations === 0) {

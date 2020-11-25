@@ -1,6 +1,8 @@
 # TANTALUM
 TANTALUM is a tool to calculate the number of passwords that follow certain rules.
-**THIS TOOL IS IN A DEVELOPMENT STAGE! IT DOES NOT WORK YET!**
+
+## Status
+**The current status is:** *contains a few bugs*.
 
 ## How to use it
 For a guide how to use it, head over to the "How to use it" wiki page, linked [here](https://github.com/curesium/tantalum/wiki/how-to-use-it)

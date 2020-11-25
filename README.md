@@ -15,6 +15,9 @@ For a guide how to use it, head over to the "How to use it" wiki page, linked [h
 ### Errors
 In case you run into a error, it *should* display an error. You can check the errors on the error wiki page. You can find that [here](https://github.com/curesium/tantalum/wiki/Errors 'Error help page').
 
+## Releases
+The releases are located in a different repository, you can find that [here](https://github.com/curesium/releases 'Release page').
+
 ## Credits
 ### Math
 The math is done by the following people:

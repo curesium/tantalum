@@ -1,2 +1,2 @@
 # Contributing to TANTALUM
-For now, TANTALUM is a publicly available private project, so merge request will not be accepted.
+In the very near future, you'll be able to make pull requests for forks. We're still working on it.

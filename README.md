@@ -22,7 +22,6 @@ The releases are located in a different repository, you can find that [here](htt
 
 ## Credits
 ### Math
-The math is done by the following people:
 * [Twanman1412](https://github.com/twanman1412)
 
 ### Errors

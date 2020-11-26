@@ -29,5 +29,4 @@ The math is done by the following people:
 * [Kwember05](https://github.com/kwember05)
 
 ### Interface
-The Interface is done by:
 * [twboom](https://github.com/twboom)

@@ -60,30 +60,30 @@ function calc() {
     formula = "Error: E1-5"};
 
   if (lowercaseRequired > length) {
-    formula = "Error: E1-1"};
-
+    formula = "Error: E1-1";
+  }
   if (capitalRequired > length) {
-    formula = "Error: E1-2"};
-
+    formula = "Error: E1-2";
+  }
   if (numbersRequired > length) {
-    formula = "Error: E1-3"};
-
+    formula = "Error: E1-3";
+  }
   if (charactersRequired > length) {
-    formula = "Error: E1-4"};
-
+    formula = "Error: E1-4";
+  }
   // Errors if Required is more than 2
   if (lowercaseRequired > 3) {
-    formula = "Error: E2-1"};
-
+    formula = "Error: E2-1";
+  }
   if (capitalRequired > 3) {
-    formula = "Error: E2-2"};
-
+    formula = "Error: E2-2";
+  }
   if (numbersRequired > 3) {
-    formula = "Error: E2-3"};
-
+    formula = "Error: E2-3";
+  }
   if (charactersRequired > 3) {
-    formula = "Error: E2-4"};
-
+    formula = "Error: E2-4";
+  }
   if (capitalRequired === 0) {
         capitalPositions = 0;
         capitalPositionsDef = 0;

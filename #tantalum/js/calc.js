@@ -49,7 +49,7 @@ function calc() {
   }
 
   if (!charactersInput) {
-    capital = 10
+    capital = 19
   }
 
   // Total amount of characters

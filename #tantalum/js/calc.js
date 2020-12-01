@@ -11,11 +11,13 @@ function calc() {
   let numbersInput = document.querySelector('[name="numbers"]');
   let charactersInput = document.querySelector('[name="characters"]');
 
+
   // Required characters
   let lowercaseRequiredInput = document.querySelector('[name="lowercaseRequired"]');
   let capitalRequiredInput = document.querySelector('[name="capitalRequired"]');
   let numbersRequiredInput = document.querySelector('[name="numbersRequired"]');
   let charactersRequiredInput = document.querySelector('[name="charactersRequired"]');
+
 
   // Parsing all of the variables to intergers
     // Total amount
@@ -33,6 +35,12 @@ function calc() {
   let numbersRequired = parseInt(numbersRequiredInput.value);
   let charactersRequired = parseInt(charactersRequiredInput.value);
 
+  // Replace empty strings with preditermined values
+  if (!lowercaseInput) {
+    lowercase = 26
+  }
+
+//  if capitalInput
 
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
@@ -163,10 +171,11 @@ function calc() {
     formula = "error"
   }
 
-let formulatwo = formula.toFixed(0)
+  let formulatwo = formula.toFixed(0)
 
   // Display the output
   document.querySelector('#outputText').innerHTML = formulatwo
+  alert(lowercase)
 }
 
 

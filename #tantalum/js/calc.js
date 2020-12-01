@@ -36,10 +36,13 @@ function calc() {
   let charactersRequired = parseInt(charactersRequiredInput.value);
 
   // Replace empty strings with predetermined values
-  if (!lowercaseInput) {
+  if (1 !== 2) {
     lowercase = 26
+    console.log(lowercaseInput.value)
+    console.log(lowercase.value);
+    console.log('lowercaseInput is empty')
   }
-
+/*
   if (!capitalInput) {
     capital = 26
   }
@@ -51,7 +54,7 @@ function calc() {
   if (!charactersInput) {
     capital = 19
   }
-
+*/
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
 
@@ -181,11 +184,11 @@ function calc() {
     formula = "error"
   }
 
-  let formulatwo = formula.toFixed(0)
+  //let formulatwo = formula.toFixed(0)
 
   // Display the output
-  document.querySelector('#outputText').innerHTML = formulatwo
-  alert(lowercase)
+  document.querySelector('#outputText').innerHTML = formula
+  alert(lowercaseInput)
 }
 
 

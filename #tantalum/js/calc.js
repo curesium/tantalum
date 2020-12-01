@@ -35,7 +35,7 @@ function calc() {
   let numbersRequired = parseInt(numbersRequiredInput.value);
   let charactersRequired = parseInt(charactersRequiredInput.value);
 
-  // Replace empty strings with preditermined values
+  // Replace empty strings with predetermined values
   if (!lowercaseInput) {
     lowercase = 26
   }

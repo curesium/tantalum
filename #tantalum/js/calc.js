@@ -40,7 +40,17 @@ function calc() {
     lowercase = 26
   }
 
-//  if capitalInput
+  if (!capitalInput) {
+    capital = 26
+  }
+
+  if (!numbersInput) {
+    capital = 10
+  }
+
+  if (!charactersInput) {
+    capital = 10
+  }
 
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;

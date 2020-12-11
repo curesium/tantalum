@@ -52,7 +52,7 @@ label {
   margin-right: 10px;
 }
 
-input {
+.itemInput {
   margin-bottom: 10px;
   margin-left: 10px;
 
@@ -67,7 +67,7 @@ input {
   border-radius: 10px;
 }
 
-input:focus {
+.itemInput:focus {
   border-bottom: solid;
   border-width: 3px;
   border-color: #363636;
@@ -125,6 +125,7 @@ input:focus {
 
 .submitButton {
   font-family: 'Quicksand';
+  font-size: 32px;
   color: #FFFFFF;
 
   background-color: #363636;
@@ -134,6 +135,7 @@ input:focus {
 
   border: hidden;
   border-radius: 5px;
+  outline: none;
 
   transition: 0.5s;
 

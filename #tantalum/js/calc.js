@@ -36,25 +36,51 @@ function calc() {
   let charactersRequired = parseInt(charactersRequiredInput.value);
 
   // Replace empty strings with predetermined values
-  if (1 !== 2) {
+  if (isNaN(length)) {
+    length = 8
+    console.log('Length is empty')
+  }
+
+  if (isNaN(lowercase)) {
     lowercase = 26
-    console.log(lowercaseInput.value)
-    console.log(lowercase.value);
-    console.log('lowercaseInput is empty')
+    console.log('Lowercase is empty')
   }
-/*
-  if (!capitalInput) {
+
+  if (isNaN(capital)) {
     capital = 26
+    console.log('Capital is empty')
   }
 
-  if (!numbersInput) {
-    capital = 10
+  if (isNaN(numbers)) {
+    numbers = 10
+    console.log('Numbers is empty')
   }
 
-  if (!charactersInput) {
-    capital = 19
+  if (isNaN(characters)) {
+    characters = 19
+    console.log('Characters is empty')
   }
-*/
+
+  if (isNaN(lowercaseRequired)) {
+    lowercaseRequired = 1
+    console.log('Required lowercase is empty')
+  }
+
+  if (isNaN(capitalRequired)) {
+    capitalRequired = 1
+    console.log('Required capital is empty')
+  }
+
+  if (isNaN(numbersRequired)) {
+    numbersRequired = 1
+    console.log('Required numbers is empty')
+  }
+
+  if (isNaN(charactersRequired)) {
+    charactersRequired = 1
+    console.log('Required characters is empty')
+  }
+
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
 
@@ -188,7 +214,6 @@ function calc() {
 
   // Display the output
   document.querySelector('#outputText').innerHTML = formula
-  alert(lowercaseInput)
 }
 
 

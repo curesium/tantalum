@@ -11,11 +11,13 @@ function calc() {
   let numbersInput = document.querySelector('[name="numbers"]');
   let charactersInput = document.querySelector('[name="characters"]');
 
+
   // Required characters
   let lowercaseRequiredInput = document.querySelector('[name="lowercaseRequired"]');
   let capitalRequiredInput = document.querySelector('[name="capitalRequired"]');
   let numbersRequiredInput = document.querySelector('[name="numbersRequired"]');
   let charactersRequiredInput = document.querySelector('[name="charactersRequired"]');
+
 
   // Parsing all of the variables to intergers
     // Total amount
@@ -33,6 +35,51 @@ function calc() {
   let numbersRequired = parseInt(numbersRequiredInput.value);
   let charactersRequired = parseInt(charactersRequiredInput.value);
 
+  // Replace empty strings with predetermined values
+  if (isNaN(length)) {
+    length = 8
+    console.log('Length is empty')
+  }
+
+  if (isNaN(lowercase)) {
+    lowercase = 26
+    console.log('Lowercase is empty')
+  }
+
+  if (isNaN(capital)) {
+    capital = 26
+    console.log('Capital is empty')
+  }
+
+  if (isNaN(numbers)) {
+    numbers = 10
+    console.log('Numbers is empty')
+  }
+
+  if (isNaN(characters)) {
+    characters = 19
+    console.log('Characters is empty')
+  }
+
+  if (isNaN(lowercaseRequired)) {
+    lowercaseRequired = 1
+    console.log('Required lowercase is empty')
+  }
+
+  if (isNaN(capitalRequired)) {
+    capitalRequired = 1
+    console.log('Required capital is empty')
+  }
+
+  if (isNaN(numbersRequired)) {
+    numbersRequired = 1
+    console.log('Required numbers is empty')
+  }
+
+  if (isNaN(charactersRequired)) {
+    charactersRequired = 1
+    console.log('Required characters is empty')
+  }
 
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
@@ -163,10 +210,10 @@ function calc() {
     formula = "error"
   }
 
-let formulatwo = formula.toFixed(0)
+  //let formulatwo = formula.toFixed(0)
 
   // Display the output
-  document.querySelector('#outputText').innerHTML = formulatwo
+  document.querySelector('#outputText').innerHTML = formula
 }
 
 

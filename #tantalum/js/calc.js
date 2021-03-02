@@ -97,10 +97,13 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   }
   
   const errors = errorCheck()
-  console.log(errors.length)
   if (errors.length !== 0) {
     let content = 'Errors:';
-    for (let i = 0; i < errors.length; i++) { content += ' ' + errors[i]; }
+    for (let i = 0; i < errors.length; i++) {
+      if (i < 1) { content += ' ' }
+      if (i > 0) { content += ', ' }
+      content += errors[i]
+    }
     return content;
   };
  

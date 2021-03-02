@@ -182,12 +182,10 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   if (combinations >= 1) {
     formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
-  if (combinations < 0){
-    formula = "error"
-  }
+  if (combinations < 0){ formula = "error"; }
 
   // Return the output
-  return formula
+  return formula;
 }
 
 

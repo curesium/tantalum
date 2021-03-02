@@ -92,7 +92,7 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
     if (charactersRequired > length) { errors.push('E1-4'); }
     if (totalRequired > length) { errors.push('E1-5'); };
   
-    if (errors.length === 9) { console.log('Well done! You collected them all!') }  
+    if (errors.length === 5) { console.log('Well done! You collected them all!') }  
     return errors;
   }
   

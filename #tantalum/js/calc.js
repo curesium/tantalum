@@ -70,29 +70,44 @@ tantalum.run = function() {
 
 // Function to calculate the numbers
 tantalum.calc = function(length, lowercase, capital, numbers, characters, lowercaseRequired, capitalRequired, numbersRequired, charactersRequired) {
-    
+
   const factorialize = function(num) {
       if (num === 0 || num === 1) { return 1 };
       for (let i = num - 1; i >= 1; i--) { num *= i; };
       return num;
   }
-
+  
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
   // Total amount of required characters
   let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
   let notRequired = length - totalRequired
+  
+   function errorCheck() {
+    const errors = [];
+    //Errors if Required is longer then total
+    if (lowercaseRequired > length) { errors.push('E1-1'); }
+    if (capitalRequired > length) { errors.push('E1-2'); }
+    if (numbersRequired > length) { errors.push('E1-3'); }
+    if (charactersRequired > length) { errors.push('E1-4'); }
+    if (totalRequired > length) { errors.push('E1-5'); };
+  
+    if (errors.length === 9) { console.log('Well done! You collected them all!') }  
+    return errors;
+  }
+  
+  const errors = errorCheck()
+  console.log(errors.length)
+  if (errors.length !== 0) {
+    let content = 'Errors:';
+    for (let i = 0; i < errors.length; i++) { content += ' ' + errors[i]; }
+    return content;
+  };
+ 
   //length - requires
   let lengthC = length - capitalRequired
   let lengthCL = lengthC - lowercaseRequired
   let lengthCLN = lengthCL - numbersRequired
-
-  //Errors if Required is longer then total
-  if (lowercaseRequired > length) { formula = "Error: E1-1"; }
-  if (capitalRequired > length) { formula = "Error: E1-2"; }
-  if (numbersRequired > length) { formula = "Error: E1-3"; }
-  if (charactersRequired > length) { formula = "Error: E1-4"; }
-  if (totalRequired > length) { formula = "Error: E1-5"; };
 
   const capitalPositions = (factorialize(length) / (factorialize(capitalRequired ) * factorialize(length - capitalRequired)))
   const lowercasePositions = (factorialize(lengthC) / (factorialize(lowercaseRequired) * factorialize(lengthC - lowercaseRequired)))

@@ -71,12 +71,38 @@ tantalum.run = function() {
 // Function to calculate the numbers
 tantalum.calc = function(length, lowercase, capital, numbers, characters, lowercaseRequired, capitalRequired, numbersRequired, charactersRequired) {
 
-
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
 
   // Total amount of required characters
   let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
+
+  function errorCheck() {
+    const errors = [];
+    //Errors if Required is longer then total
+    if (lowercaseRequired > length) { errors.push('E1-1'); }
+    if (capitalRequired > length) { errors.push('E1-2'); }
+    if (numbersRequired > length) { errors.push('E1-3'); }
+    if (charactersRequired > length) { errors.push('E1-4'); }
+    if (totalRequired > length) { errors.push('E1-5'); };
+  
+    // Errors if Required is more than 2
+    if (lowercaseRequired > 3) { errors.push('E2-1'); }
+    if (capitalRequired > 3) { errors.push('E2-2'); }
+    if (numbersRequired > 3) { errors.push('E2-3'); }
+    if (charactersRequired > 3) { errors.push('E2-4'); }
+
+    if (errors.length === 9) { console.log('Well done! You collected them all!') }  
+    return errors;
+  }
+
+  const errors = errorCheck()
+  console.log(errors)
+  if (errors !== []) {
+    let content = 'Errors:';
+    for (let i = 0; i < errors.length; i++) { content += ' ' + errors[i]; }
+    return content
+  }
 
   // Possible combinations
   let capitalPositions;
@@ -92,19 +118,6 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   let lowercasePositionsDef;
   let numbersPositionsDef;
   let charactersPositionsDef;
-
-  //Errors if Required is longer then total
-  if (lowercaseRequired > length) { formula = "Error: E1-1"; }
-  if (capitalRequired > length) { formula = "Error: E1-2"; }
-  if (numbersRequired > length) { formula = "Error: E1-3"; }
-  if (charactersRequired > length) { formula = "Error: E1-4"; }
-  if (totalRequired > length) { formula = "Error: E1-5"; };
-
-  // Errors if Required is more than 2
-  if (lowercaseRequired > 3) { formula = "Error: E2-1"; }
-  if (capitalRequired > 3) { formula = "Error: E2-2"; }
-  if (numbersRequired > 3) { formula = "Error: E2-3"; }
-  if (charactersRequired > 3) { formula = "Error: E2-4"; }
 
   if (capitalRequired === 0) {
     capitalPositions = 0;
@@ -182,7 +195,7 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   if (combinations >= 1) {
     formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
   }
-  if (combinations < 0){ formula = "error"; }
+  if (combinations < 0){ return 'Error' }
 
   // Return the output
   return formula;

@@ -97,12 +97,12 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   }
 
   const errors = errorCheck()
-  console.log(errors)
-  if (errors !== []) {
+  console.log(errors.length)
+  if (errors.length !== 0) {
     let content = 'Errors:';
     for (let i = 0; i < errors.length; i++) { content += ' ' + errors[i]; }
-    return content
-  }
+    return content;
+  };
 
   // Possible combinations
   let capitalPositions;

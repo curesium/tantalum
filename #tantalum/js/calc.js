@@ -82,17 +82,10 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   // Total amount of required characters
   let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
   let notRequired = length - totalRequired
-  // Possible combinations
-  let capitalPositions;
-  let lowercasePositions;
-  let numbersPositions;
-  let charactersPositions;
   //length - requires
   let lengthC = length - capitalRequired
   let lengthCL = lengthC - lowercaseRequired
   let lengthCLN = lengthCL - numbersRequired
-
-  let formula;
 
   //Errors if Required is longer then total
   if (lowercaseRequired > length) { formula = "Error: E1-1"; }
@@ -101,17 +94,15 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   if (charactersRequired > length) { formula = "Error: E1-4"; }
   if (totalRequired > length) { formula = "Error: E1-5"; };
 
-  capitalPositions = (factorialize(length) / (factorialize(capitalRequired ) * factorialize(length - capitalRequired)))
-  lowercasePositions = (factorialize(lengthC) / (factorialize(lowercaseRequired) * factorialize(lengthC - lowercaseRequired)))
-  numbersPositions = (factorialize(lengthCL) / (factorialize(numbersRequired) * factorialize(lengthCL - numbersRequired)))
-  charactersPositions = (factorialize(lengthCLN) / (factorialize(charactersRequired) * factorialize(lengthCLN - charactersRequired)))
-  
-  formula = capitalPositions * capital * lowercasePositions * lowercase * numbersPositions * numbers * charactersPositions * characters * total ** notRequired
+  const capitalPositions = (factorialize(length) / (factorialize(capitalRequired ) * factorialize(length - capitalRequired)))
+  const lowercasePositions = (factorialize(lengthC) / (factorialize(lowercaseRequired) * factorialize(lengthC - lowercaseRequired)))
+  const numbersPositions = (factorialize(lengthCL) / (factorialize(numbersRequired) * factorialize(lengthCL - numbersRequired)))
+  const charactersPositions = (factorialize(lengthCLN) / (factorialize(charactersRequired) * factorialize(lengthCLN - charactersRequired)))
+  const formula = capitalPositions * capital * lowercasePositions * lowercase * numbersPositions * numbers * charactersPositions * characters * total ** notRequired
   
   // Return the output
   return formula;
 }
-
 
 // For the submit button
 let submit = document.querySelector('[type="submit"]');

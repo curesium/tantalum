@@ -71,13 +71,19 @@ tantalum.run = function() {
 // Function to calculate the numbers
 tantalum.calc = function(length, lowercase, capital, numbers, characters, lowercaseRequired, capitalRequired, numbersRequired, charactersRequired) {
 
+  const factorialize = function(num) {
+      if (num === 0 || num === 1) { return 1 };
+      for (let i = num - 1; i >= 1; i--) { num *= i; };
+      return num;
+  }
+  
   // Total amount of characters
   let total = lowercase + capital + numbers + characters;
-
   // Total amount of required characters
   let totalRequired = lowercaseRequired + capitalRequired + numbersRequired + charactersRequired;
-
-  function errorCheck() {
+  let notRequired = length - totalRequired
+  
+   function errorCheck() {
     const errors = [];
     //Errors if Required is longer then total
     if (lowercaseRequired > length) { errors.push('E1-1'); }
@@ -86,16 +92,10 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
     if (charactersRequired > length) { errors.push('E1-4'); }
     if (totalRequired > length) { errors.push('E1-5'); };
   
-    // Errors if Required is more than 2
-    if (lowercaseRequired > 3) { errors.push('E2-1'); }
-    if (capitalRequired > 3) { errors.push('E2-2'); }
-    if (numbersRequired > 3) { errors.push('E2-3'); }
-    if (charactersRequired > 3) { errors.push('E2-4'); }
-
     if (errors.length === 9) { console.log('Well done! You collected them all!') }  
     return errors;
   }
-
+  
   const errors = errorCheck()
   console.log(errors.length)
   if (errors.length !== 0) {
@@ -103,104 +103,21 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
     for (let i = 0; i < errors.length; i++) { content += ' ' + errors[i]; }
     return content;
   };
+ 
+  //length - requires
+  let lengthC = length - capitalRequired
+  let lengthCL = lengthC - lowercaseRequired
+  let lengthCLN = lengthCL - numbersRequired
 
-  // Possible combinations
-  let capitalPositions;
-  let lowercasePositions;
-  let numbersPositions;
-  let charactersPositions;
-
-  let combinations;
-
-  let formula;
-
-  let capitalPositionsDef;
-  let lowercasePositionsDef;
-  let numbersPositionsDef;
-  let charactersPositionsDef;
-
-  if (capitalRequired === 0) {
-    capitalPositions = 0;
-    capitalPositionsDef = 0;
-  }
-
-  if (capitalRequired === 1) {
-    capitalPositions = length;
-    capitalPositionsDef = 1;
-  }
-  if (capitalRequired === 2 ) {
-    capitalPositions = ((length) * (length - 1)) / ((capitalRequired) * (capitalRequired - 1));
-    capitalPositionsDef = 1;
-  }
-  if (capitalRequired === 3) {
-    capitalPositions = ((length) * (length - 1) * (length - 2)) / ((capitalRequired) * (capitalRequired - 1) * (capitalRequired - 2));
-    capitalPositionsDef = 1;
-  }
-  if (lowercaseRequired === 0) {
-    lowercasePositions = 0;
-    lowercasePositionsDef = 0;
-  }
-  if (lowercaseRequired === 1) {
-    lowercasePositions = length - capitalRequired;
-    lowercasePositionsDef = 1;
-  }
-  if (lowercaseRequired === 2) {
-    lowercasePositions = ((length - capitalRequired) * (length - capitalRequired - 1)) / ((lowercaseRequired) * (lowercaseRequired - 1));
-    lowercasePositionsDef = 1;
-  }
-  if (lowercaseRequired === 3) {
-    lowercasePositions = ((length - capitalRequired) * (length- capitalRequired - 1) * (length - capitalRequired - 2)) / ((lowercaseRequired) * (lowercaseRequired - 1) * (lowercaseRequired - 2));
-    lowercasePositionsDef = 1;
-  }
-  if (numbersRequired === 0) {
-    numbersPositions = 0;
-    numbersPositionsDef = 0;
-  }
-  if (numbersRequired === 1) {
-    numbersPositions = length - capitalRequired - lowercaseRequired;
-    numbersPositionsDef = 1;
-  }
-  if (numbersRequired === 2) {
-    numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1)) / ((numbersRequired) * (numbersRequired - 1));
-    numbersPositionsDef = 1;
-  }
-  if (numbersRequired === 3) {
-    numbersPositions = ((length - capitalRequired - lowercaseRequired) * (length - capitalRequired - lowercaseRequired - 1) * (length - capitalRequired - lowercaseRequired - 2)) / ((numbersRequired) * (numbersRequired - 1) * (numbersRequired - 2));
-    numbersPositionsDef = 1;
-  }
-  if (charactersRequired === 0) {
-    charactersPositions = 0;
-    charactersPositionsDef = 0;
-  }
-  if (charactersRequired === 1) {
-    charactersPositions = length - capitalRequired - lowercaseRequired - numbersRequired;
-    charactersPositionsDef = 1;
-  }
-  if (charactersRequired === 2) {
-    charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1)) / ((charactersRequired) * (charactersRequired - 1));
-    charactersPositionsDef = 1;
-  }
-  if (charactersRequired === 3) {
-    charactersPositions = ((length - capitalRequired - lowercaseRequired - numbersRequired) * (length - capitalRequired - lowercaseRequired - numbersRequired - 1) * (length - capitalRequired - lowercaseRequired - numbersRequired - 2)) / ((charactersRequired) * (charactersRequired - 1) * (charactersRequired - 2));
-    charactersPositionsDef = 1;
-  }
-
-  combinations = (capitalPositions ** capitalPositionsDef) * (lowercasePositions ** lowercasePositionsDef) * (numbersPositions ** numbersPositionsDef) * (charactersPositions ** charactersPositionsDef)
-
-
-  // The formula
-  if (combinations === 0) {
-      formula = (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
-  }
-  if (combinations >= 1) {
-    formula = combinations * (lowercase ** lowercaseRequired) * (capital ** capitalRequired) * (numbers ** numbersRequired) *(characters ** charactersRequired) * (total ** (length - totalRequired));
-  }
-  if (combinations < 0){ return 'Error' }
-
+  const capitalPositions = (factorialize(length) / (factorialize(capitalRequired ) * factorialize(length - capitalRequired)))
+  const lowercasePositions = (factorialize(lengthC) / (factorialize(lowercaseRequired) * factorialize(lengthC - lowercaseRequired)))
+  const numbersPositions = (factorialize(lengthCL) / (factorialize(numbersRequired) * factorialize(lengthCL - numbersRequired)))
+  const charactersPositions = (factorialize(lengthCLN) / (factorialize(charactersRequired) * factorialize(lengthCLN - charactersRequired)))
+  const formula = capitalPositions * capital * lowercasePositions * lowercase * numbersPositions * numbers * charactersPositions * characters * total ** notRequired
+  
   // Return the output
   return formula;
 }
-
 
 // For the submit button
 let submit = document.querySelector('[type="submit"]');

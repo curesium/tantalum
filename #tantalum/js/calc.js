@@ -116,7 +116,7 @@ tantalum.calc = function(length, lowercase, capital, numbers, characters, lowerc
   const lowercasePositions = (factorialize(lengthC) / (factorialize(lowercaseRequired) * factorialize(lengthC - lowercaseRequired)))
   const numbersPositions = (factorialize(lengthCL) / (factorialize(numbersRequired) * factorialize(lengthCL - numbersRequired)))
   const charactersPositions = (factorialize(lengthCLN) / (factorialize(charactersRequired) * factorialize(lengthCLN - charactersRequired)))
-  const formula = capitalPositions * capital * lowercasePositions * lowercase * numbersPositions * numbers * charactersPositions * characters * total ** notRequired
+  const formula = capitalPositions * (capital ** capitalRequired) * lowercasePositions * (lowercase ** lowercaseRequired) * numbersPositions * (numbers ** numbersRequired) * charactersPositions * (characters ** charactersRequired) * (total ** notRequired)
   
   // Return the output
   return formula;
